@@ -44,8 +44,10 @@ class TraditionalDanceController extends Controller
         $this->authorize('create', new TraditionalDance);
 
         $newTraditionalDance = $request->validate([
-            'name'        => 'required|max:60',
-            'description' => 'nullable|max:255',
+            'name'          => 'required|max:60',
+            'dance_type'    => 'required|max:60',
+            'choreographer' => 'nullable|max:60',
+            'description'   => 'nullable|max:255',
         ]);
         $newTraditionalDance['creator_id'] = auth()->id();
 

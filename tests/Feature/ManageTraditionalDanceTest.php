@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\TraditionalDance;
 use Tests\TestCase;
+use App\TraditionalDance;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ManageTraditionalDanceTest extends TestCase
@@ -23,8 +23,10 @@ class ManageTraditionalDanceTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'TraditionalDance 1 name',
-            'description' => 'TraditionalDance 1 description',
+            'name'          => 'TraditionalDance 1 name',
+            'dance_type'    => 'TraditionalDance 1 name',
+            'choreographer' => 'TraditionalDance 1 name',
+            'description'   => 'TraditionalDance 1 description',
         ], $overrides);
     }
 
