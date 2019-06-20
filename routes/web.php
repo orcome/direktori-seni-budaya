@@ -33,3 +33,8 @@ Route::resource('traditional_music_instruments', 'TraditionalMusicInstrumentCont
  * TraditionalDances Routes
  */
 Route::resource('traditional_dances', 'TraditionalDanceController');
+
+/*
+ * TraditionalCeremonies Routes
+ */
+Route::resource('traditional_ceremonies', 'TraditionalCeremonyController');
