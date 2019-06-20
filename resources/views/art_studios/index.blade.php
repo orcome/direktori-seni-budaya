@@ -30,6 +30,8 @@
                     <tr>
                         <th class="text-center">{{ __('app.table_no') }}</th>
                         <th>{{ __('art_studio.name') }}</th>
+                        <th>{{ __('art_studio.leader') }}</th>
+                        <th>{{ __('art_studio.art_type') }}</th>
                         <th>{{ __('art_studio.description') }}</th>
                         <th class="text-center">{{ __('app.action') }}</th>
                     </tr>
@@ -39,6 +41,8 @@
                     <tr>
                         <td class="text-center">{{ $artStudios->firstItem() + $key }}</td>
                         <td>{!! $artStudio->name_link !!}</td>
+                        <td>{{ $artStudio->leader }}</td>
+                        <td>{{ $artStudio->art_type }}</td>
                         <td>{{ $artStudio->description }}</td>
                         <td class="text-center">
                             @can('view', $artStudio)
