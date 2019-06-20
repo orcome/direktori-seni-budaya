@@ -30,6 +30,7 @@
                     <tr>
                         <th class="text-center">{{ __('app.table_no') }}</th>
                         <th>{{ __('traditional_ceremony.name') }}</th>
+                        <th>{{ __('traditional_ceremony.detail') }}</th>
                         <th>{{ __('traditional_ceremony.description') }}</th>
                         <th class="text-center">{{ __('app.action') }}</th>
                     </tr>
@@ -39,6 +40,7 @@
                     <tr>
                         <td class="text-center">{{ $traditionalCeremonies->firstItem() + $key }}</td>
                         <td>{!! $traditionalCeremony->name_link !!}</td>
+                        <td>{!! $traditionalCeremony->detail !!}</td>
                         <td>{{ $traditionalCeremony->description }}</td>
                         <td class="text-center">
                             @can('view', $traditionalCeremony)

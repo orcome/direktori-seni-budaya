@@ -30,5 +30,5 @@ return [
     // Attributes
     'name'             => 'Nama Alat',
     'sum_sub_district' => 'Jumlah Kecamatan',
-    'description'      => 'Deskripsi',
+    'description'      => 'Keterangan',
 ];

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TraditionalCeremony extends Model
 {
-    protected $fillable = ['name', 'description', 'creator_id'];
+    protected $fillable = ['name', 'detail', 'description', 'creator_id'];
 
     public function getNameLinkAttribute()
     {

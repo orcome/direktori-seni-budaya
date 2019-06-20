@@ -34,5 +34,5 @@ return [
     'leader'       => 'Nama Pimpinan Sanggar',
     'art_type'     => 'Jenis Sanggar',
     'building'     => 'Tersedia Bangunan Tempat Berlatih',
-    'description'  => 'Deskripsi',
+    'description'  => 'Keterangan',
 ];

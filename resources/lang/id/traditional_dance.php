@@ -31,5 +31,5 @@ return [
     'name'          => 'Nama Tari Tradisional',
     'dance_type'    => 'Jenis Tarian',
     'choreographer' => 'Koreografer',
-    'description'   => 'Deskripsi',
+    'description'   => 'Keterangan',
 ];

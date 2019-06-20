@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\TraditionalCeremony;
 use Tests\TestCase;
+use App\TraditionalCeremony;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ManageTraditionalCeremonyTest extends TestCase
@@ -23,7 +23,8 @@ class ManageTraditionalCeremonyTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'TraditionalCeremony 1 name',
+            'name'        => 'Manjuluk Duit',
+            'detail'      => 'Kumbang auh untuk orang tua perempuan',
             'description' => 'TraditionalCeremony 1 description',
         ], $overrides);
     }
@@ -81,7 +82,8 @@ class ManageTraditionalCeremonyTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'TraditionalCeremony 1 name',
+            'name'        => 'Acara mamanggul',
+            'detail'      => 'Membuat surat persetujuan ikatan (meminang)',
             'description' => 'TraditionalCeremony 1 description',
         ], $overrides);
     }
