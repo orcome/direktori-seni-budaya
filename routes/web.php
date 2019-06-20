@@ -11,50 +11,53 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::view('/', 'auth.login')->middleware('guest');
 
 Auth::routes();
+Route::middleware('auth')->group(function () {
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-/*
- * ArtStudios Routes
- */
-Route::resource('art_studios', 'ArtStudioController');
+    /*
+     * ArtStudios Routes
+     */
+    Route::resource('art_studios', 'ArtStudioController');
 
-/*
- * TraditionalMusicInstruments Routes
- */
-Route::resource('traditional_music_instruments', 'TraditionalMusicInstrumentController');
+    /*
+     * TraditionalMusicInstruments Routes
+     */
+    Route::resource('traditional_music_instruments', 'TraditionalMusicInstrumentController');
 
-/*
- * TraditionalDances Routes
- */
-Route::resource('traditional_dances', 'TraditionalDanceController');
+    /*
+     * TraditionalDances Routes
+     */
+    Route::resource('traditional_dances', 'TraditionalDanceController');
 
-/*
- * TraditionalCeremonies Routes
- */
-Route::resource('traditional_ceremonies', 'TraditionalCeremonyController');
+    /*
+     * TraditionalCeremonies Routes
+     */
+    Route::resource('traditional_ceremonies', 'TraditionalCeremonyController');
 
-/*
- * RitualCeremonies Routes
- */
-Route::resource('ritual_ceremonies', 'RitualCeremonyController');
+    /*
+     * RitualCeremonies Routes
+     */
+    Route::resource('ritual_ceremonies', 'RitualCeremonyController');
 
-/*
- * TraditionalGames Routes
- */
-Route::resource('traditional_games', 'TraditionalGameController');
+    /*
+     * TraditionalGames Routes
+     */
+    Route::resource('traditional_games', 'TraditionalGameController');
 
-/*
- * CulturalHeritages Routes
- */
-Route::resource('cultural_heritages', 'CulturalHeritageController');
+    /*
+     * CulturalHeritages Routes
+     */
+    Route::resource('cultural_heritages', 'CulturalHeritageController');
 
-/*
- * NaturalArtificialTourisms Routes
- */
-Route::resource('natural_artificial_tourisms', 'NaturalArtificialTourismController');
+    /*
+     * NaturalArtificialTourisms Routes
+     */
+    Route::resource('natural_artificial_tourisms', 'NaturalArtificialTourismController');
+});
