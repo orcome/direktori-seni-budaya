@@ -30,6 +30,9 @@
                     <tr>
                         <th class="text-center">{{ __('app.table_no') }}</th>
                         <th>{{ __('cultural_heritage.name') }}</th>
+                        <th>{{ __('cultural_heritage.type') }}</th>
+                        <th>{{ __('cultural_heritage.sub_district') }}</th>
+                        <th>{{ __('cultural_heritage.village') }}</th>
                         <th>{{ __('cultural_heritage.description') }}</th>
                         <th class="text-center">{{ __('app.action') }}</th>
                     </tr>
@@ -39,6 +42,9 @@
                     <tr>
                         <td class="text-center">{{ $culturalHeritages->firstItem() + $key }}</td>
                         <td>{!! $culturalHeritage->name_link !!}</td>
+                        <td>{!! $culturalHeritage->type !!}</td>
+                        <td>{!! $culturalHeritage->sub_district !!}</td>
+                        <td>{!! $culturalHeritage->village !!}</td>
                         <td>{{ $culturalHeritage->description }}</td>
                         <td class="text-center">
                             @can('view', $culturalHeritage)

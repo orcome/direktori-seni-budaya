@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\CulturalHeritage;
 use Tests\TestCase;
+use App\CulturalHeritage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ManageCulturalHeritageTest extends TestCase
@@ -23,8 +23,11 @@ class ManageCulturalHeritageTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'CulturalHeritage 1 name',
-            'description' => 'CulturalHeritage 1 description',
+            'name'         => 'Situs Cagar Budaya Gereja Imanuel Madomai',
+            'type'         => 'Situs',
+            'sub_district' => 'Kapuas Barat',
+            'village'      => 'Saka Mangkahai',
+            'description'  => 'CulturalHeritage 1 description',
         ], $overrides);
     }
 
@@ -81,8 +84,11 @@ class ManageCulturalHeritageTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'CulturalHeritage 1 name',
-            'description' => 'CulturalHeritage 1 description',
+            'name'         => 'Situs Cagar Budaya Kuta Bataguh',
+            'type'         => 'Situs',
+            'sub_district' => 'Bataguh',
+            'village'      => 'Ds.Lunuk',
+            'description'  => 'CulturalHeritage 1 description',
         ], $overrides);
     }
 

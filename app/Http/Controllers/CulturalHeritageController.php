@@ -44,8 +44,11 @@ class CulturalHeritageController extends Controller
         $this->authorize('create', new CulturalHeritage);
 
         $newCulturalHeritage = $request->validate([
-            'name'        => 'required|max:60',
-            'description' => 'nullable|max:255',
+            'name'         => 'required|max:60',
+            'type'         => 'required|max:60',
+            'sub_district' => 'required|max:60',
+            'village'      => 'required|max:60',
+            'description'  => 'nullable|max:255',
         ]);
         $newCulturalHeritage['creator_id'] = auth()->id();
 
@@ -90,8 +93,11 @@ class CulturalHeritageController extends Controller
         $this->authorize('update', $culturalHeritage);
 
         $culturalHeritageData = $request->validate([
-            'name'        => 'required|max:60',
-            'description' => 'nullable|max:255',
+            'name'         => 'required|max:60',
+            'type'         => 'required|max:60',
+            'sub_district' => 'required|max:60',
+            'village'      => 'required|max:60',
+            'description'  => 'nullable|max:255',
         ]);
         $culturalHeritage->update($culturalHeritageData);
 

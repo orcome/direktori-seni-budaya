@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CulturalHeritage extends Model
 {
-    protected $fillable = ['name', 'description', 'creator_id'];
+    protected $fillable = ['name', 'type', 'sub_district', 'village', 'description', 'creator_id'];
 
     public function getNameLinkAttribute()
     {

@@ -12,6 +12,12 @@
                 <div class="card-body">
                     <label class="form-label text-primary">{{ __('cultural_heritage.name') }}</label>
                     <p>{{ $culturalHeritage->name }}</p>
+                    <label class="form-label text-primary">{{ __('cultural_heritage.type') }}</label>
+                    <p>{{ $culturalHeritage->type }}</p>
+                    <label class="form-label text-primary">{{ __('cultural_heritage.sub_district') }}</label>
+                    <p>{{ $culturalHeritage->sub_district }}</p>
+                    <label class="form-label text-primary">{{ __('cultural_heritage.village') }}</label>
+                    <p>{{ $culturalHeritage->village }}</p>
                     <label class="form-label text-primary">{{ __('cultural_heritage.description') }}</label>
                     <p>{{ $culturalHeritage->description }}</p>
                     {!! $errors->first('cultural_heritage_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
@@ -38,6 +44,21 @@
                         <label for="name" class="form-label">{{ __('cultural_heritage.name') }} <span class="form-required">*</span></label>
                         <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name', $culturalHeritage->name) }}" required>
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="type" class="form-label">{{ __('cultural_heritage.type') }} <span class="form-required">*</span></label>
+                        <input id="type" type="text" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" value="{{ old('type', $culturalHeritage->type) }}" required>
+                        {!! $errors->first('type', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="sub_district" class="form-label">{{ __('cultural_heritage.sub_district') }} <span class="form-required">*</span></label>
+                        <input id="sub_district" type="text" class="form-control{{ $errors->has('sub_district') ? ' is-invalid' : '' }}" name="sub_district" value="{{ old('sub_district', $culturalHeritage->sub_district) }}" required>
+                        {!! $errors->first('sub_district', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="village" class="form-label">{{ __('cultural_heritage.village') }} <span class="form-required">*</span></label>
+                        <input id="village" type="text" class="form-control{{ $errors->has('village') ? ' is-invalid' : '' }}" name="village" value="{{ old('village', $culturalHeritage->village) }}" required>
+                        {!! $errors->first('village', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
                         <label for="description" class="form-label">{{ __('cultural_heritage.description') }}</label>

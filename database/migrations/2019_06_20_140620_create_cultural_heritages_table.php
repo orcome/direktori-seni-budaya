@@ -16,6 +16,9 @@ class CreateCulturalHeritagesTable extends Migration
         Schema::create('cultural_heritages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 60);
+            $table->string('type');
+            $table->string('sub_district');
+            $table->string('village');
             $table->string('description')->nullable();
             $table->unsignedBigInteger('creator_id');
             $table->timestamps();

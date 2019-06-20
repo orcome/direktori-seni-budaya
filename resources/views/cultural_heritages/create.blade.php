@@ -16,6 +16,21 @@
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
+                        <label for="type" class="form-label">{{ __('cultural_heritage.type') }} <span class="form-required">*</span></label>
+                        <input id="type" type="text" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" value="{{ old('type') }}" required>
+                        {!! $errors->first('type', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="sub_district" class="form-label">{{ __('cultural_heritage.sub_district') }} <span class="form-required">*</span></label>
+                        <input id="sub_district" sub_district="text" class="form-control{{ $errors->has('sub_district') ? ' is-invalid' : '' }}" name="sub_district" value="{{ old('sub_district') }}" required>
+                        {!! $errors->first('sub_district', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="village" class="form-label">{{ __('cultural_heritage.village') }} <span class="form-required">*</span></label>
+                        <input id="village" village="text" class="form-control{{ $errors->has('village') ? ' is-invalid' : '' }}" name="village" value="{{ old('village') }}" required>
+                        {!! $errors->first('village', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
                         <label for="description" class="form-label">{{ __('cultural_heritage.description') }}</label>
                         <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="4">{{ old('description') }}</textarea>
                         {!! $errors->first('description', '<span class="invalid-feedback" role="alert">:message</span>') !!}

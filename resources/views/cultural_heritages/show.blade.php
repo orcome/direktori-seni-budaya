@@ -11,6 +11,9 @@
                 <table class="table table-sm">
                     <tbody>
                         <tr><td>{{ __('cultural_heritage.name') }}</td><td>{{ $culturalHeritage->name }}</td></tr>
+                        <tr><td>{{ __('cultural_heritage.type') }}</td><td>{{ $culturalHeritage->type }}</td></tr>
+                        <tr><td>{{ __('cultural_heritage.sub_district') }}</td><td>{{ $culturalHeritage->sub_district }}</td></tr>
+                        <tr><td>{{ __('cultural_heritage.village') }}</td><td>{{ $culturalHeritage->village }}</td></tr>
                         <tr><td>{{ __('cultural_heritage.description') }}</td><td>{{ $culturalHeritage->description }}</td></tr>
                     </tbody>
                 </table>
