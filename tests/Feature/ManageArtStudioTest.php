@@ -23,8 +23,13 @@ class ManageArtStudioTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'ArtStudio 1 name',
-            'description' => 'ArtStudio 1 description',
+            'name'         => 'Sanggar Tingang Menteng Panjung Tarung',
+            'sub_district' => 'Kecamatan Selat',
+            'village'      => 'Selat Dalam',
+            'leader'       => 'Erliansyah',
+            'art_type'     => 'Sanggar Tari',
+            'building'     => 0, // 0: Tidak Ada, 1: Ada
+            'description'  => 'Diupayakan Pembangunan Gedungnya melalui Pemerintah Kabupaten Pemerintah Propinsi dan Pemerintah Pusat',
         ], $overrides);
     }
 
@@ -51,18 +56,6 @@ class ManageArtStudioTest extends TestCase
 
         // name empty
         $this->post(route('art_studios.store'), $this->getCreateFields(['name' => '']));
-        $this->assertSessionHasErrors('name');
-    }
-
-    /** @test */
-    public function validate_art_studio_name_is_not_more_than_60_characters()
-    {
-        $this->loginAsUser();
-
-        // name 70 characters
-        $this->post(route('art_studios.store'), $this->getCreateFields([
-            'name' => str_repeat('Test Title', 7),
-        ]));
         $this->assertSessionHasErrors('name');
     }
 

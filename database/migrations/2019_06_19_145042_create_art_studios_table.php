@@ -15,7 +15,12 @@ class CreateArtStudiosTable extends Migration
     {
         Schema::create('art_studios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 60);
+            $table->string('name');
+            $table->string('sub_district');
+            $table->string('village')->nullable();
+            $table->string('leader', 60);
+            $table->string('art_type');
+            $table->boolean('building')->default(0);
             $table->string('description')->nullable();
             $table->unsignedBigInteger('creator_id');
             $table->timestamps();
