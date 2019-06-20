@@ -28,3 +28,8 @@ Route::resource('art_studios', 'ArtStudioController');
  * TraditionalMusicInstruments Routes
  */
 Route::resource('traditional_music_instruments', 'TraditionalMusicInstrumentController');
+
+/*
+ * TraditionalDances Routes
+ */
+Route::resource('traditional_dances', 'TraditionalDanceController');
