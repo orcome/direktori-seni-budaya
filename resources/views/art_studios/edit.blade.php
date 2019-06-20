@@ -10,10 +10,20 @@
             <div class="card">
                 <div class="card-header">{{ __('art_studio.delete') }}</div>
                 <div class="card-body">
-                    <label class="form-label text-primary">{{ __('art_studio.name') }}</label>
-                    <p>{{ $artStudio->name }}</p>
-                    <label class="form-label text-primary">{{ __('art_studio.description') }}</label>
-                    <p>{{ $artStudio->description }}</p>
+                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.name') }}</label>
+                    <p  style="margin-bottom:6px">{{ $artStudio->name }}</p>
+                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.sub_district') }}</label>
+                    <p  style="margin-bottom:6px">{{ $artStudio->sub_district }}</p>
+                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.village') }}</label>
+                    <p  style="margin-bottom:6px">{{ $artStudio->village }}</p>
+                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.leader') }}</label>
+                    <p  style="margin-bottom:6px">{{ $artStudio->leader }}</p>
+                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.art_type') }}</label>
+                    <p  style="margin-bottom:6px">{{ $artStudio->art_type }}</p>
+                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.building') }}</label>
+                    <p  style="margin-bottom:6px">{{ $artStudio->building }}</p>
+                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.description') }}</label>
+                    <p  style="margin-bottom:6px">{{ $artStudio->description }}</p>
                     {!! $errors->first('art_studio_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                 </div>
                 <hr style="margin:0">
