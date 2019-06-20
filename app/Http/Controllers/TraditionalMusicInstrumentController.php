@@ -91,8 +91,9 @@ class TraditionalMusicInstrumentController extends Controller
         $this->authorize('update', $traditionalMusicInstrument);
 
         $traditionalMusicInstrumentData = $request->validate([
-            'name'        => 'required|max:60',
-            'description' => 'nullable|max:255',
+            'name'             => 'required|max:60',
+            'sum_sub_district' => 'required|numeric',
+            'description'      => 'nullable|max:255',
         ]);
         $traditionalMusicInstrument->update($traditionalMusicInstrumentData);
 

@@ -12,6 +12,8 @@
                 <div class="card-body">
                     <label class="form-label text-primary">{{ __('traditional_music_instrument.name') }}</label>
                     <p>{{ $traditionalMusicInstrument->name }}</p>
+                    <label class="form-label text-primary">{{ __('traditional_music_instrument.sum_sub_district') }}</label>
+                    <p>{{ $traditionalMusicInstrument->sum_sub_district }}</p>
                     <label class="form-label text-primary">{{ __('traditional_music_instrument.description') }}</label>
                     <p>{{ $traditionalMusicInstrument->description }}</p>
                     {!! $errors->first('traditional_music_instrument_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
@@ -38,6 +40,11 @@
                         <label for="name" class="form-label">{{ __('traditional_music_instrument.name') }} <span class="form-required">*</span></label>
                         <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name', $traditionalMusicInstrument->name) }}" required>
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="sum_sub_district" class="form-label">{{ __('traditional_music_instrument.sum_sub_district') }} <span class="form-required">*</span></label>
+                        <input id="sum_sub_district" type="number" class="form-control{{ $errors->has('sum_sub_district') ? ' is-invalid' : '' }}" name="sum_sub_district" value="{{ old('sum_sub_district', $traditionalMusicInstrument->sum_sub_district) }}" required>
+                        {!! $errors->first('sum_sub_district', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
                         <label for="description" class="form-label">{{ __('traditional_music_instrument.description') }}</label>

@@ -82,8 +82,9 @@ class ManageTraditionalMusicInstrumentTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'TraditionalMusicInstrument 1 name',
-            'description' => 'TraditionalMusicInstrument 1 description',
+            'name'             => 'TraditionalMusicInstrument 1 name',
+            'sum_sub_district' => 10,
+            'description'      => 'TraditionalMusicInstrument 1 description',
         ], $overrides);
     }
 
