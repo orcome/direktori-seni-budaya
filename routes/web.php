@@ -53,3 +53,8 @@ Route::resource('traditional_games', 'TraditionalGameController');
  * CulturalHeritages Routes
  */
 Route::resource('cultural_heritages', 'CulturalHeritageController');
+
+/*
+ * NaturalArtificialTourisms Routes
+ */
+Route::resource('natural_artificial_tourisms', 'NaturalArtificialTourismController');
