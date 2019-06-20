@@ -23,10 +23,10 @@ class ManageTraditionalDanceTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'          => 'TraditionalDance 1 name',
-            'dance_type'    => 'TraditionalDance 1 name',
-            'choreographer' => 'TraditionalDance 1 name',
-            'description'   => 'TraditionalDance 1 description',
+            'name'          => 'Tari Manasai',
+            'dance_type'    => 'Pedalaman',
+            'choreographer' => 'Irwansyah',
+            'description'   => 'Dilakukan pada saat acara adat',
         ], $overrides);
     }
 
@@ -83,8 +83,10 @@ class ManageTraditionalDanceTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'TraditionalDance 1 name',
-            'description' => 'TraditionalDance 1 description',
+            'name'          => 'Tari Mandau',
+            'dance_type'    => 'Pedalaman',
+            'choreographer' => 'Irwansyah',
+            'description'   => 'Dilakukan pada saat acara adat',
         ], $overrides);
     }
 

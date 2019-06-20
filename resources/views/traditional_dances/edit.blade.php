@@ -40,6 +40,16 @@
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
+                        <label for="dance_type" class="form-label">{{ __('traditional_dance.dance_type') }} <span class="form-required">*</span></label>
+                        <input id="dance_type" type="text" class="form-control{{ $errors->has('dance_type') ? ' is-invalid' : '' }}" name="dance_type" value="{{ old('dance_type', $traditionalDance->dance_type) }}" required>
+                        {!! $errors->first('dance_type', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="choreographer" class="form-label">{{ __('traditional_dance.choreographer') }}</label>
+                        <input id="choreographer" type="text" class="form-control{{ $errors->has('choreographer') ? ' is-invalid' : '' }}" name="choreographer" value="{{ old('choreographer', $traditionalDance->choreographer) }}" required>
+                        {!! $errors->first('choreographer', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
                         <label for="description" class="form-label">{{ __('traditional_dance.description') }}</label>
                         <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="4">{{ old('description', $traditionalDance->description) }}</textarea>
                         {!! $errors->first('description', '<span class="invalid-feedback" role="alert">:message</span>') !!}
