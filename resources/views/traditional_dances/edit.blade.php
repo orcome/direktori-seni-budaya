@@ -12,6 +12,10 @@
                 <div class="card-body">
                     <label class="form-label text-primary">{{ __('traditional_dance.name') }}</label>
                     <p>{{ $traditionalDance->name }}</p>
+                    <label class="form-label text-primary">{{ __('traditional_dance.dance_type') }}</label>
+                    <p>{{ $traditionalDance->dance_type }}</p>
+                    <label class="form-label text-primary">{{ __('traditional_dance.choreographer') }}</label>
+                    <p>{{ $traditionalDance->choreographer }}</p>
                     <label class="form-label text-primary">{{ __('traditional_dance.description') }}</label>
                     <p>{{ $traditionalDance->description }}</p>
                     {!! $errors->first('traditional_dance_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
