@@ -23,3 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
  * ArtStudios Routes
  */
 Route::resource('art_studios', 'ArtStudioController');
+
+/*
+ * TraditionalMusicInstruments Routes
+ */
+Route::resource('traditional_music_instruments', 'TraditionalMusicInstrumentController');
