@@ -42,7 +42,7 @@
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
-                        <label for="detail" class="form-label">{{ __('traditional_ceremony.detail') }}</label>
+                        <label for="detail" class="form-label">{{ __('traditional_ceremony.detail') }} <span class="form-required">*</span></label>
                         <textarea id="detail" class="form-control{{ $errors->has('detail') ? ' is-invalid' : '' }}" name="detail" rows="4">{{ old('detail', $traditionalCeremony->detail) }}</textarea>
                         {!! $errors->first('detail', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>

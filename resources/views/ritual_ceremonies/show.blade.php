@@ -11,6 +11,7 @@
                 <table class="table table-sm">
                     <tbody>
                         <tr><td>{{ __('ritual_ceremony.name') }}</td><td>{{ $ritualCeremony->name }}</td></tr>
+                        <tr><td>{{ __('ritual_ceremony.detail') }}</td><td>{{ $ritualCeremony->detail }}</td></tr>
                         <tr><td>{{ __('ritual_ceremony.description') }}</td><td>{{ $ritualCeremony->description }}</td></tr>
                     </tbody>
                 </table>

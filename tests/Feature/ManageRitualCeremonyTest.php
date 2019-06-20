@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\RitualCeremony;
 use Tests\TestCase;
+use App\RitualCeremony;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ManageRitualCeremonyTest extends TestCase
@@ -23,8 +23,9 @@ class ManageRitualCeremonyTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'RitualCeremony 1 name',
-            'description' => 'RitualCeremony 1 description',
+            'name'        => 'Balian balaku untung',
+            'detail'      => 'Balian mengundang roh gaib yang menjaga kota/desa dengan memberikan macam-macam sesajen agar para roh gaib itu selalu mejaga keamanan kota/desa supaya masyarakat selalu hidup damai dan sejahtera tidak ada gangguan apapun',
+            'description' => 'Upacara ini semua dilaksanakan untuk keselamatan selama dalam kehidupan di dunia oleh orang-orang yang memeluk agama Hindu Kaharingan',
         ], $overrides);
     }
 
@@ -81,8 +82,9 @@ class ManageRitualCeremonyTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'RitualCeremony 1 name',
-            'description' => 'RitualCeremony 1 description',
+            'name'        => 'Balian pakanan Sahut Lewu (mamapas lewu)',
+            'detail'      => 'Balian mengundang roh gaib yang menjaga kota/desa dengan memberikan macam-macam sesajen agar para roh gaib itu selalu mejaga keamanan kota/desa supaya masyarakat selalu hidup damai dan sejahtera tidak ada gangguan apapun',
+            'description' => 'Upacara ini semua dilaksanakan untuk keselamatan selama dalam kehidupan di dunia oleh orang-orang yang memeluk agama Hindu Kaharingan',
         ], $overrides);
     }
 

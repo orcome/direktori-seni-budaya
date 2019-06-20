@@ -45,6 +45,7 @@ class RitualCeremonyController extends Controller
 
         $newRitualCeremony = $request->validate([
             'name'        => 'required|max:60',
+            'detail'      => 'required|max:255',
             'description' => 'nullable|max:255',
         ]);
         $newRitualCeremony['creator_id'] = auth()->id();
@@ -91,6 +92,7 @@ class RitualCeremonyController extends Controller
 
         $ritualCeremonyData = $request->validate([
             'name'        => 'required|max:60',
+            'detail'      => 'required|max:255',
             'description' => 'nullable|max:255',
         ]);
         $ritualCeremony->update($ritualCeremonyData);

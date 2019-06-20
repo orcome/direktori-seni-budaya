@@ -45,7 +45,7 @@ class TraditionalCeremonyController extends Controller
 
         $newTraditionalCeremony = $request->validate([
             'name'        => 'required|max:60',
-            'detail'      => 'nullable|max:255',
+            'detail'      => 'required|max:255',
             'description' => 'nullable|max:255',
         ]);
         $newTraditionalCeremony['creator_id'] = auth()->id();
@@ -92,7 +92,7 @@ class TraditionalCeremonyController extends Controller
 
         $traditionalCeremonyData = $request->validate([
             'name'        => 'required|max:60',
-            'detail'      => 'nullable|max:255',
+            'detail'      => 'required|max:255',
             'description' => 'nullable|max:255',
         ]);
         $traditionalCeremony->update($traditionalCeremonyData);

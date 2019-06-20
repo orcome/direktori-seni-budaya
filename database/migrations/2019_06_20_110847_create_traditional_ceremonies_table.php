@@ -16,7 +16,7 @@ class CreateTraditionalCeremoniesTable extends Migration
         Schema::create('traditional_ceremonies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 60);
-            $table->string('detail')->nullable();
+            $table->string('detail');
             $table->string('description')->nullable();
             $table->unsignedBigInteger('creator_id');
             $table->timestamps();

@@ -12,6 +12,8 @@
                 <div class="card-body">
                     <label class="form-label text-primary">{{ __('ritual_ceremony.name') }}</label>
                     <p>{{ $ritualCeremony->name }}</p>
+                    <label class="form-label text-primary">{{ __('ritual_ceremony.detail') }}</label>
+                    <p>{{ $ritualCeremony->detail }}</p>
                     <label class="form-label text-primary">{{ __('ritual_ceremony.description') }}</label>
                     <p>{{ $ritualCeremony->description }}</p>
                     {!! $errors->first('ritual_ceremony_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
@@ -38,6 +40,11 @@
                         <label for="name" class="form-label">{{ __('ritual_ceremony.name') }} <span class="form-required">*</span></label>
                         <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name', $ritualCeremony->name) }}" required>
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="detail" class="form-label">{{ __('ritual_ceremony.detail') }} <span class="form-required">*</span></label>
+                        <textarea id="detail" class="form-control{{ $errors->has('detail') ? ' is-invalid' : '' }}" name="detail" rows="4">{{ old('detail', $ritualCeremony->detail) }}</textarea>
+                        {!! $errors->first('detail', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
                         <label for="description" class="form-label">{{ __('ritual_ceremony.description') }}</label>
