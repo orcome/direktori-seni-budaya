@@ -11,6 +11,8 @@
                 <table class="table table-sm">
                     <tbody>
                         <tr><td>{{ __('traditional_dance.name') }}</td><td>{{ $traditionalDance->name }}</td></tr>
+                        <tr><td>{{ __('traditional_dance.dance_type') }}</td><td>{{ $traditionalDance->dance_type }}</td></tr>
+                        <tr><td>{{ __('traditional_dance.choreographer') }}</td><td>{{ $traditionalDance->choreographer }}</td></tr>
                         <tr><td>{{ __('traditional_dance.description') }}</td><td>{{ $traditionalDance->description }}</td></tr>
                     </tbody>
                 </table>

@@ -30,6 +30,8 @@
                     <tr>
                         <th class="text-center">{{ __('app.table_no') }}</th>
                         <th>{{ __('traditional_dance.name') }}</th>
+                        <th>{{ __('traditional_dance.dance_type') }}</th>
+                        <th>{{ __('traditional_dance.choreographer') }}</th>
                         <th>{{ __('traditional_dance.description') }}</th>
                         <th class="text-center">{{ __('app.action') }}</th>
                     </tr>
@@ -39,6 +41,8 @@
                     <tr>
                         <td class="text-center">{{ $traditionalDances->firstItem() + $key }}</td>
                         <td>{!! $traditionalDance->name_link !!}</td>
+                        <td>{!! $traditionalDance->dance_type !!}</td>
+                        <td>{!! $traditionalDance->choreographer !!}</td>
                         <td>{{ $traditionalDance->description }}</td>
                         <td class="text-center">
                             @can('view', $traditionalDance)
