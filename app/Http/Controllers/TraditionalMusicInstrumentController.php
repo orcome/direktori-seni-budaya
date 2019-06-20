@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\TraditionalMusicInstrument;
 use Illuminate\Http\Request;
+use App\TraditionalMusicInstrument;
 
 class TraditionalMusicInstrumentController extends Controller
 {
@@ -44,8 +44,9 @@ class TraditionalMusicInstrumentController extends Controller
         $this->authorize('create', new TraditionalMusicInstrument);
 
         $newTraditionalMusicInstrument = $request->validate([
-            'name'        => 'required|max:60',
-            'description' => 'nullable|max:255',
+            'name'             => 'required|max:60',
+            'sum_sub_district' => 'required|numeric',
+            'description'      => 'nullable|max:255',
         ]);
         $newTraditionalMusicInstrument['creator_id'] = auth()->id();
 

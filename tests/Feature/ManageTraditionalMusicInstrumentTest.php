@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\TraditionalMusicInstrument;
 use Tests\TestCase;
+use App\TraditionalMusicInstrument;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ManageTraditionalMusicInstrumentTest extends TestCase
@@ -23,8 +23,9 @@ class ManageTraditionalMusicInstrumentTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'TraditionalMusicInstrument 1 name',
-            'description' => 'TraditionalMusicInstrument 1 description',
+            'name'             => 'TraditionalMusicInstrument 1 name',
+            'sum_sub_district' => 20,
+            'description'      => 'TraditionalMusicInstrument 1 description',
         ], $overrides);
     }
 

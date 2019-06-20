@@ -16,6 +16,7 @@ class CreateTraditionalMusicInstrumentsTable extends Migration
         Schema::create('traditional_music_instruments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 60);
+            $table->integer('sum_sub_district');
             $table->string('description')->nullable();
             $table->unsignedBigInteger('creator_id');
             $table->timestamps();
