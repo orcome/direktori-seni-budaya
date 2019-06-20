@@ -38,3 +38,8 @@ Route::resource('traditional_dances', 'TraditionalDanceController');
  * TraditionalCeremonies Routes
  */
 Route::resource('traditional_ceremonies', 'TraditionalCeremonyController');
+
+/*
+ * RitualCeremonies Routes
+ */
+Route::resource('ritual_ceremonies', 'RitualCeremonyController');
