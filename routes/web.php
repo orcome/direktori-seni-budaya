@@ -48,3 +48,8 @@ Route::resource('ritual_ceremonies', 'RitualCeremonyController');
  * TraditionalGames Routes
  */
 Route::resource('traditional_games', 'TraditionalGameController');
+
+/*
+ * CulturalHeritages Routes
+ */
+Route::resource('cultural_heritages', 'CulturalHeritageController');
