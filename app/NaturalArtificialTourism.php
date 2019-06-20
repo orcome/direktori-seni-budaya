@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class NaturalArtificialTourism extends Model
 {
-    protected $fillable = ['name', 'description', 'creator_id'];
+    protected $fillable = ['name', 'category', 'location', 'description', 'creator_id'];
 
     public function getNameLinkAttribute()
     {

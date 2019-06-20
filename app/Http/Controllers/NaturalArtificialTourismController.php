@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\NaturalArtificialTourism;
 use Illuminate\Http\Request;
+use App\NaturalArtificialTourism;
 
 class NaturalArtificialTourismController extends Controller
 {
@@ -45,6 +45,8 @@ class NaturalArtificialTourismController extends Controller
 
         $newNaturalArtificialTourism = $request->validate([
             'name'        => 'required|max:60',
+            'category'    => 'required|boolean',
+            'location'    => 'required|max:60',
             'description' => 'nullable|max:255',
         ]);
         $newNaturalArtificialTourism['creator_id'] = auth()->id();
@@ -91,6 +93,8 @@ class NaturalArtificialTourismController extends Controller
 
         $naturalArtificialTourismData = $request->validate([
             'name'        => 'required|max:60',
+            'category'    => 'required|boolean',
+            'location'    => 'required|max:60',
             'description' => 'nullable|max:255',
         ]);
         $naturalArtificialTourism->update($naturalArtificialTourismData);

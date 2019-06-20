@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\NaturalArtificialTourism;
 use Tests\TestCase;
+use App\NaturalArtificialTourism;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ManageNaturalArtificialTourismTest extends TestCase
@@ -23,7 +23,9 @@ class ManageNaturalArtificialTourismTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'NaturalArtificialTourism 1 name',
+            'name'        => 'Pulau Telo',
+            'category'    => 0,
+            'location'    => 'Selat',
             'description' => 'NaturalArtificialTourism 1 description',
         ], $overrides);
     }
@@ -81,7 +83,9 @@ class ManageNaturalArtificialTourismTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'NaturalArtificialTourism 1 name',
+            'name'        => 'Pulau Telo',
+            'category'    => 0,
+            'location'    => 'Selat',
             'description' => 'NaturalArtificialTourism 1 description',
         ], $overrides);
     }

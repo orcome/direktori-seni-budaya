@@ -30,6 +30,8 @@
                     <tr>
                         <th class="text-center">{{ __('app.table_no') }}</th>
                         <th>{{ __('natural_artificial_tourism.name') }}</th>
+                        <th>{{ __('natural_artificial_tourism.category') }}</th>
+                        <th>{{ __('natural_artificial_tourism.location') }}</th>
                         <th>{{ __('natural_artificial_tourism.description') }}</th>
                         <th class="text-center">{{ __('app.action') }}</th>
                     </tr>
@@ -39,6 +41,8 @@
                     <tr>
                         <td class="text-center">{{ $naturalArtificialTourisms->firstItem() + $key }}</td>
                         <td>{!! $naturalArtificialTourism->name_link !!}</td>
+                        <td>{!! $naturalArtificialTourism->category !!}</td>
+                        <td>{!! $naturalArtificialTourism->location !!}</td>
                         <td>{{ $naturalArtificialTourism->description }}</td>
                         <td class="text-center">
                             @can('view', $naturalArtificialTourism)

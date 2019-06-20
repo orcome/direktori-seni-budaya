@@ -12,6 +12,10 @@
                 <div class="card-body">
                     <label class="form-label text-primary">{{ __('natural_artificial_tourism.name') }}</label>
                     <p>{{ $naturalArtificialTourism->name }}</p>
+                    <label class="form-label text-primary">{{ __('natural_artificial_tourism.category') }}</label>
+                    <p>{{ $naturalArtificialTourism->category }}</p>
+                    <label class="form-label text-primary">{{ __('natural_artificial_tourism.location') }}</label>
+                    <p>{{ $naturalArtificialTourism->location }}</p>
                     <label class="form-label text-primary">{{ __('natural_artificial_tourism.description') }}</label>
                     <p>{{ $naturalArtificialTourism->description }}</p>
                     {!! $errors->first('natural_artificial_tourism_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
@@ -38,6 +42,16 @@
                         <label for="name" class="form-label">{{ __('natural_artificial_tourism.name') }} <span class="form-required">*</span></label>
                         <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name', $naturalArtificialTourism->name) }}" required>
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="category" class="form-label">{{ __('natural_artificial_tourism.category') }} <span class="form-required">*</span></label>
+                        <input id="category" type="text" class="form-control{{ $errors->has('category') ? ' is-invalid' : '' }}" name="category" value="{{ old('category', $naturalArtificialTourism->category) }}" required>
+                        {!! $errors->first('category', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
+                        <label for="location" class="form-label">{{ __('natural_artificial_tourism.location') }} <span class="form-required">*</span></label>
+                        <input id="location" type="text" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" name="location" value="{{ old('location', $naturalArtificialTourism->location) }}" required>
+                        {!! $errors->first('location', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
                         <label for="description" class="form-label">{{ __('natural_artificial_tourism.description') }}</label>

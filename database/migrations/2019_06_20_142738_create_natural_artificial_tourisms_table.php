@@ -16,6 +16,8 @@ class CreateNaturalArtificialTourismsTable extends Migration
         Schema::create('natural_artificial_tourisms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 60);
+            $table->boolean('category')->default(0);
+            $table->string('location');
             $table->string('description')->nullable();
             $table->unsignedBigInteger('creator_id');
             $table->timestamps();

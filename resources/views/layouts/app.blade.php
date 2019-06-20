@@ -70,6 +70,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('cultural_heritages.index') }}">{{ __('cultural_heritage.list') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('natural_artificial_tourisms.index') }}">{{ __('natural_artificial_tourism.list') }}</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
