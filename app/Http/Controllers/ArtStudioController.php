@@ -95,8 +95,13 @@ class ArtStudioController extends Controller
         $this->authorize('update', $artStudio);
 
         $artStudioData = $request->validate([
-            'name'        => 'required|max:60',
-            'description' => 'nullable|max:255',
+            'name'         => 'required|max:255',
+            'sub_district' => 'required|max:255',
+            'village'      => 'nullable|max:255',
+            'leader'       => 'required|max:60',
+            'art_type'     => 'required|max:255',
+            'building'     => 'required|boolean',
+            'description'  => 'nullable|max:255',
         ]);
         $artStudio->update($artStudioData);
 

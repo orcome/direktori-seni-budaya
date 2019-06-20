@@ -74,8 +74,13 @@ class ManageArtStudioTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'        => 'ArtStudio 1 name',
-            'description' => 'ArtStudio 1 description',
+            'name'         => 'Sanggar Riak Nyalong',
+            'sub_district' => 'Kecamatan Selat',
+            'village'      => 'Selat Dalam',
+            'leader'       => 'Ragus Rumbang',
+            'art_type'     => 'Sanggar Tari',
+            'building'     => 0, // 0: Tidak Ada, 1: Ada
+            'description'  => 'Diupayakan Pembangunan Gedungnya melalui Pemerintah Kabupaten Pemerintah Propinsi dan Pemerintah Pusat',
         ], $overrides);
     }
 
@@ -106,19 +111,6 @@ class ManageArtStudioTest extends TestCase
 
         // name empty
         $this->patch(route('art_studios.update', $art_studio), $this->getEditFields(['name' => '']));
-        $this->assertSessionHasErrors('name');
-    }
-
-    /** @test */
-    public function validate_art_studio_name_update_is_not_more_than_60_characters()
-    {
-        $this->loginAsUser();
-        $art_studio = factory(ArtStudio::class)->create(['name' => 'Testing 123']);
-
-        // name 70 characters
-        $this->patch(route('art_studios.update', $art_studio), $this->getEditFields([
-            'name' => str_repeat('Test Title', 7),
-        ]));
         $this->assertSessionHasErrors('name');
     }
 
