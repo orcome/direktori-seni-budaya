@@ -51,7 +51,12 @@
                     </div>
                     <div class="form-group">
                         <label for="sub_district_id" class="form-label">{{ __('art_studio.sub_district_id') }} <span class="form-required">*</span></label>
-                        <input id="sub_district_id" type="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id', $artStudio->subDistrict->name) }}" required>
+                        <select name="sub_district_id" id="sub_district_id" class="form-control {{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}">
+                            <option value="">-- {{ __('sub_district.list') }} --</option>
+                            @foreach ($subDistricts as $key => $subDistrict)
+                                <option value="{{ $subDistrict->id }}" {{ old('sub_district_id', $artStudio->sub_district_id) == $subDistrict->id ? 'selected' : '' }}>{{ $subDistrict->name }}</option>
+                            @endforeach
+                        </select>
                         {!! $errors->first('sub_district_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
@@ -71,7 +76,10 @@
                     </div>
                     <div class="form-group">
                         <label for="building" class="form-label">{{ __('art_studio.building') }} <span class="form-required">*</span></label>
-                        <input id="building" type="text" class="form-control{{ $errors->has('building') ? ' is-invalid' : '' }}" name="building" value="{{ old('building', $artStudio->building) }}" required>
+                        <div class="col-md-6">
+                            <input type="radio" name="building" value="0" {{ $artStudio->building == 0 ? 'checked' : '' }}> Tidak Ada <br>
+                            <input type="radio" name="building" value="1" {{ $artStudio->building == 1 ? 'checked' : '' }}> Ada <br>
+                        </div>
                         {!! $errors->first('building', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

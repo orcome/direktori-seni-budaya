@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ArtStudio;
+use App\SubDistrict;
 use Illuminate\Http\Request;
 
 class ArtStudioController extends Controller
@@ -30,7 +31,9 @@ class ArtStudioController extends Controller
     {
         $this->authorize('create', new ArtStudio);
 
-        return view('art_studios.create');
+        $subDistricts = SubDistrict::all();
+
+        return view('art_studios.create', compact('subDistricts'));
     }
 
     /**
@@ -80,7 +83,9 @@ class ArtStudioController extends Controller
     {
         $this->authorize('update', $artStudio);
 
-        return view('art_studios.edit', compact('artStudio'));
+        $subDistricts = SubDistrict::all();
+
+        return view('art_studios.edit', compact('artStudio', 'subDistricts'));
     }
 
     /**
