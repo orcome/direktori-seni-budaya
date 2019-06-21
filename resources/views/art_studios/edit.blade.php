@@ -13,7 +13,7 @@
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.name') }}</label>
                     <p  style="margin-bottom:6px">{{ $artStudio->name }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.sub_district_id') }}</label>
-                    <p  style="margin-bottom:6px">{{ $artStudio->sub_district_id }}</p>
+                    <p  style="margin-bottom:6px">{{ $artStudio->subDistrict->name }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.village') }}</label>
                     <p  style="margin-bottom:6px">{{ $artStudio->village }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.leader') }}</label>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group">
                         <label for="sub_district_id" class="form-label">{{ __('art_studio.sub_district_id') }} <span class="form-required">*</span></label>
-                        <input id="sub_district_id" type="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id', $artStudio->sub_district_id) }}" required>
+                        <input id="sub_district_id" type="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id', $artStudio->subDistrict->name) }}" required>
                         {!! $errors->first('sub_district_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

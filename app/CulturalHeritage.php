@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use App\SubDistrict;
 use Illuminate\Database\Eloquent\Model;
 
 class CulturalHeritage extends Model
@@ -25,5 +26,10 @@ class CulturalHeritage extends Model
     public function creator()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function subDistrict()
+    {
+        return $this->belongsTo(SubDistrict::class);
     }
 }

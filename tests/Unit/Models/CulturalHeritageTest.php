@@ -39,4 +39,13 @@ class CulturalHeritageTest extends TestCase
         $this->assertInstanceOf(User::class, $culturalHeritage->creator);
         $this->assertEquals($culturalHeritage->creator_id, $culturalHeritage->creator->id);
     }
+
+    /** @test */
+    public function a_art_studio_has_belongs_to_sub_district_relation()
+    {
+        $culturalHeritage = factory(CulturalHeritage::class)->make();
+
+        $this->assertInstanceOf(SubDistrict::class, $culturalHeritage->subDistrict);
+        $this->assertEquals($culturalHeritage->sub_district_id, $culturalHeritage->subDistrict->id);
+    }
 }

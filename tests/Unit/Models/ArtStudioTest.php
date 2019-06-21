@@ -39,4 +39,13 @@ class ArtStudioTest extends TestCase
         $this->assertInstanceOf(User::class, $artStudio->creator);
         $this->assertEquals($artStudio->creator_id, $artStudio->creator->id);
     }
+
+    /** @test */
+    public function a_art_studio_has_belongs_to_sub_district_relation()
+    {
+        $artStudio = factory(ArtStudio::class)->make();
+
+        $this->assertInstanceOf(SubDistrict::class, $artStudio->subDistrict);
+        $this->assertEquals($artStudio->sub_district_id, $artStudio->subDistrict->id);
+    }
 }

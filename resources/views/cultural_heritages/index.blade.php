@@ -44,7 +44,7 @@
                         <td class="text-center">{{ $culturalHeritages->firstItem() + $key }}</td>
                         <td>{!! $culturalHeritage->name_link !!}</td>
                         <td>{!! $culturalHeritage->type !!}</td>
-                        <td>{!! $culturalHeritage->sub_district_id !!}</td>
+                        <td>{!! $culturalHeritage->subDistrict->name !!}</td>
                         <td>{!! $culturalHeritage->village !!}</td>
                         <td>{{ $culturalHeritage->description }}</td>
                         <td class="text-center">

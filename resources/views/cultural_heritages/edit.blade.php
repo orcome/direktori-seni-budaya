@@ -15,7 +15,7 @@
                     <label class="form-label text-primary">{{ __('cultural_heritage.type') }}</label>
                     <p>{{ $culturalHeritage->type }}</p>
                     <label class="form-label text-primary">{{ __('cultural_heritage.sub_district_id') }}</label>
-                    <p>{{ $culturalHeritage->sub_district_id }}</p>
+                    <p>{{ $culturalHeritage->subDistrict->name }}</p>
                     <label class="form-label text-primary">{{ __('cultural_heritage.village') }}</label>
                     <p>{{ $culturalHeritage->village }}</p>
                     <label class="form-label text-primary">{{ __('cultural_heritage.description') }}</label>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label for="sub_district_id" class="form-label">{{ __('cultural_heritage.sub_district_id') }} <span class="form-required">*</span></label>
-                        <input id="sub_district_id" type="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id', $culturalHeritage->sub_district_id) }}" required>
+                        <input id="sub_district_id" type="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id', $culturalHeritage->subDistrict->name) }}" required>
                         {!! $errors->first('sub_district_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

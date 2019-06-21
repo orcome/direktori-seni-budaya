@@ -60,9 +60,9 @@ Route::middleware('auth')->group(function () {
      * NaturalArtificialTourisms Routes
      */
     Route::resource('natural_artificial_tourisms', 'NaturalArtificialTourismController');
-});
 
-/*
- * SubDistricts Routes
- */
-Route::resource('sub_districts', 'SubDistrictController');
+    /*
+     * SubDistricts Routes
+     */
+    Route::resource('sub_districts', 'SubDistrictController');
+});
