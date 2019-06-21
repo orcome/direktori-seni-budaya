@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TraditionalMusicInstrument extends Model
 {
-    protected $fillable = ['name', 'sum_sub_district', 'description', 'creator_id'];
+    protected $fillable = ['name', 'type', 'sum_sub_district', 'description', 'creator_id'];
 
     public function getNameLinkAttribute()
     {

@@ -28,7 +28,8 @@ return [
     'undeleteable'   => 'Data Alat Musik Tradisional tidak dapat dihapus.',
 
     // Attributes
-    'name'             => 'Nama Alat',
+    'name'             => 'Nama Alat Musik',
+    'type'             => 'Jenis Alat Musik',
     'sum_sub_district' => 'Jumlah Kecamatan',
     'description'      => 'Keterangan',
 ];

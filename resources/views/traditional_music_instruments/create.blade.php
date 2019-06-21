@@ -16,6 +16,11 @@
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
+                        <label for="type" class="form-label">{{ __('traditional_music_instrument.type') }} <span class="form-required">*</span></label>
+                        <input id="type" type="text" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" value="{{ old('type') }}" required>
+                        {!! $errors->first('type', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                    </div>
+                    <div class="form-group">
                         <label for="sum_sub_district" class="form-label">{{ __('traditional_music_instrument.sum_sub_district') }} <span class="form-required">*</span></label>
                         <input id="sum_sub_district" type="number" class="form-control{{ $errors->has('sum_sub_district') ? ' is-invalid' : '' }}" name="sum_sub_district" value="{{ old('sum_sub_district') }}" required>
                         {!! $errors->first('sum_sub_district', '<span class="invalid-feedback" role="alert">:message</span>') !!}

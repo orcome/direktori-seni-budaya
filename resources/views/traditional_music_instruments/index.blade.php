@@ -30,6 +30,7 @@
                     <tr>
                         <th class="text-center">{{ __('app.table_no') }}</th>
                         <th>{{ __('traditional_music_instrument.name') }}</th>
+                        <th>{{ __('traditional_music_instrument.type') }}</th>
                         <th>{{ __('traditional_music_instrument.sum_sub_district') }}</th>
                         <th>{{ __('traditional_music_instrument.description') }}</th>
                         <th class="text-center">{{ __('app.action') }}</th>
@@ -40,6 +41,7 @@
                     <tr>
                         <td class="text-center">{{ $traditionalMusicInstruments->firstItem() + $key }}</td>
                         <td>{!! $traditionalMusicInstrument->name_link !!}</td>
+                        <td>{!! $traditionalMusicInstrument->type !!}</td>
                         <td>{!! $traditionalMusicInstrument->sum_sub_district !!}</td>
                         <td>{{ $traditionalMusicInstrument->description }}</td>
                         <td class="text-center">

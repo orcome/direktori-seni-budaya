@@ -45,6 +45,7 @@ class TraditionalMusicInstrumentController extends Controller
 
         $newTraditionalMusicInstrument = $request->validate([
             'name'             => 'required|max:60',
+            'type'             => 'required|max:60',
             'sum_sub_district' => 'required|numeric',
             'description'      => 'nullable|max:255',
         ]);
@@ -92,6 +93,7 @@ class TraditionalMusicInstrumentController extends Controller
 
         $traditionalMusicInstrumentData = $request->validate([
             'name'             => 'required|max:60',
+            'type'             => 'required|max:60',
             'sum_sub_district' => 'required|numeric',
             'description'      => 'nullable|max:255',
         ]);

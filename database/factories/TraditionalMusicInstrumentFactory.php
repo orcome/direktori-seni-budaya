@@ -8,6 +8,7 @@ $factory->define(TraditionalMusicInstrument::class, function (Faker $faker) {
 
     return [
         'name'             => $faker->word,
+        'type'             => $faker->word,
         'sum_sub_district' => 20,
         'description'      => $faker->sentence,
         'creator_id'       => function () {

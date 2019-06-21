@@ -23,7 +23,8 @@ class ManageTraditionalMusicInstrumentTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'             => 'TraditionalMusicInstrument 1 name',
+            'name'             => 'Garantung',
+            'type'             => 'Pukul',
             'sum_sub_district' => 20,
             'description'      => 'TraditionalMusicInstrument 1 description',
         ], $overrides);
@@ -82,8 +83,9 @@ class ManageTraditionalMusicInstrumentTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'             => 'TraditionalMusicInstrument 1 name',
-            'sum_sub_district' => 10,
+            'name'             => 'Rebab',
+            'type'             => 'Gesek',
+            'sum_sub_district' => 20,
             'description'      => 'TraditionalMusicInstrument 1 description',
         ], $overrides);
     }
