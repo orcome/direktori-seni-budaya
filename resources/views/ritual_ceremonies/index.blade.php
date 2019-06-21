@@ -7,6 +7,7 @@
     <div class="float-right">
         @can('create', new App\RitualCeremony)
             <a href="{{ route('ritual_ceremonies.create') }}" class="btn btn-success">{{ __('ritual_ceremony.create') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-danger">{{ __('app.print') }}</a>
             <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>

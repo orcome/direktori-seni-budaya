@@ -26,4 +26,5 @@ return [
     'delete_confirm'        => 'Anda yakin akan menghapus?',
     'delete_confirm_button' => 'YA, hapus saja!',
     'back_to_menu'          => 'Kembali',
+    'print'                 => 'Cetak',
 ];
