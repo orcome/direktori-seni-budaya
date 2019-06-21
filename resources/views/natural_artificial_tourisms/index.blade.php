@@ -9,7 +9,7 @@
             <a href="{{ route('natural_artificial_tourisms.create') }}" class="btn btn-success">{{ __('natural_artificial_tourism.create') }}</a>
         @endcan
     </div>
-    <h1 class="page-title">{{ __('natural_artificial_tourism.list') }} <small>{{ __('app.total') }} : {{ $naturalArtificialTourisms->total() }} {{ __('natural_artificial_tourism.natural_artificial_tourism') }}</small></h1>
+    <h3 class="page-title">{{ __('natural_artificial_tourism.list') }} <small>{{ __('app.total') }} : {{ $naturalArtificialTourisms->total() }} {{ __('natural_artificial_tourism.natural_artificial_tourism') }}</small></h3>
 </div>
 
 <div class="row">

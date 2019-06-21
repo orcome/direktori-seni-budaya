@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="card mb-3 box-shadow">
-                    <div class="card-header text-white" style="background-color: #089845; padding-top: 35px">
+                    <div class="card-header text-white" style="background-color: #066d32; padding-top: 35px">
                         <a class="icon_dashboard" href="{{ route('art_studios.index') }}">
                             <i class="fa fa-pencil-square-o fa-5x"></i>
                             <h5>{{ __('app.list_1') }}</h5>
@@ -22,7 +22,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{{ route('art_studios.index') }}" class="btn btn-outline-secondary btn-sm">Tampil</a>
+                                <a href="{{ route('art_studios.index') }}" class="btn btn-outline-secondary btn-sm">Tampilkan</a>
                             </div>
                             <small class="text-muted">{{ $artStudios.' Rercord' }}</small>
                         </div>
@@ -40,7 +40,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{{ route('traditional_music_instruments.index') }}" class="btn btn-outline-secondary btn-sm">Tampil</a>
+                                <a href="{{ route('traditional_music_instruments.index') }}" class="btn btn-outline-secondary btn-sm">Tampilkan</a>
                             </div>
                             <small class="text-muted">{{ $traditionalMusicInstruments.' Rercord' }}</small>
                         </div>
@@ -58,7 +58,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{{ route('traditional_dances.index') }}" class="btn btn-outline-secondary btn-sm">Tampil</a>
+                                <a href="{{ route('traditional_dances.index') }}" class="btn btn-outline-secondary btn-sm">Tampilkan</a>
                             </div>
                             <small class="text-muted">{{ $traditionalDances.' Rercord' }}</small>
                         </div>
@@ -76,7 +76,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{{ route('traditional_ceremonies.index') }}" class="btn btn-outline-secondary btn-sm">Tampil</a>
+                                <a href="{{ route('traditional_ceremonies.index') }}" class="btn btn-outline-secondary btn-sm">Tampilkan</a>
                             </div>
                             <small class="text-muted">{{ $traditionalCeremonies.' Rercord' }}</small>
                         </div>
@@ -94,7 +94,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{{ route('ritual_ceremonies.index') }}" class="btn btn-outline-secondary btn-sm">Tampil</a>
+                                <a href="{{ route('ritual_ceremonies.index') }}" class="btn btn-outline-secondary btn-sm">Tampilkan</a>
                             </div>
                             <small class="text-muted">{{ $ritualCeremonies.' Rercord' }}</small>
                         </div>
@@ -112,7 +112,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{{ route('traditional_games.index') }}" class="btn btn-outline-secondary btn-sm">Tampil</a>
+                                <a href="{{ route('traditional_games.index') }}" class="btn btn-outline-secondary btn-sm">Tampilkan</a>
                             </div>
                             <small class="text-muted">{{ $traditionalGames.' Rercord' }}</small>
                         </div>
@@ -130,7 +130,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{{ route('cultural_heritages.index') }}" class="btn btn-outline-secondary btn-sm">Tampil</a>
+                                <a href="{{ route('cultural_heritages.index') }}" class="btn btn-outline-secondary btn-sm">Tampilkan</a>
                             </div>
                             <small class="text-muted">{{ $culturalHeritages.' Rercord' }}</small>
                         </div>
@@ -148,7 +148,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{{ route('natural_artificial_tourisms.index') }}" class="btn btn-outline-secondary btn-sm">Tampil</a>
+                                <a href="{{ route('natural_artificial_tourisms.index') }}" class="btn btn-outline-secondary btn-sm">Tampilkan</a>
                             </div>
                             <small class="text-muted">{{ $naturalArtificialTourisms.' Rercord' }}</small>
                         </div>

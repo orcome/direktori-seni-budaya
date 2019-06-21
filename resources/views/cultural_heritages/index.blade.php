@@ -9,7 +9,7 @@
             <a href="{{ route('cultural_heritages.create') }}" class="btn btn-success">{{ __('cultural_heritage.create') }}</a>
         @endcan
     </div>
-    <h1 class="page-title">{{ __('cultural_heritage.list') }} <small>{{ __('app.total') }} : {{ $culturalHeritages->total() }} {{ __('cultural_heritage.cultural_heritage') }}</small></h1>
+    <h3 class="page-title">{{ __('cultural_heritage.list') }} <small>{{ __('app.total') }} : {{ $culturalHeritages->total() }} {{ __('cultural_heritage.cultural_heritage') }}</small></h3>
 </div>
 
 <div class="row">

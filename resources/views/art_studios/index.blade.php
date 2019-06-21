@@ -9,7 +9,7 @@
             <a href="{{ route('art_studios.create') }}" class="btn btn-success">{{ __('art_studio.create') }}</a>
         @endcan
     </div>
-    <h1 class="page-title">{{ __('art_studio.list') }} <small>{{ __('app.total') }} : {{ $artStudios->total() }} {{ __('art_studio.art_studio') }}</small></h1>
+    <h3 class="page-title">{{ __('art_studio.list') }} <small>{{ __('app.total') }} : {{ $artStudios->total() }} {{ __('art_studio.art_studio') }}</small></h3>
 </div>
 
 <div class="row">

@@ -9,7 +9,7 @@
             <a href="{{ route('traditional_music_instruments.create') }}" class="btn btn-success">{{ __('traditional_music_instrument.create') }}</a>
         @endcan
     </div>
-    <h1 class="page-title">{{ __('traditional_music_instrument.list') }} <small>{{ __('app.total') }} : {{ $traditionalMusicInstruments->total() }} {{ __('traditional_music_instrument.traditional_music_instrument') }}</small></h1>
+    <h3 class="page-title">{{ __('traditional_music_instrument.list') }} <small>{{ __('app.total') }} : {{ $traditionalMusicInstruments->total() }} {{ __('traditional_music_instrument.traditional_music_instrument') }}</small></h3>
 </div>
 
 <div class="row">

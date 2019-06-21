@@ -9,7 +9,7 @@
             <a href="{{ route('traditional_ceremonies.create') }}" class="btn btn-success">{{ __('traditional_ceremony.create') }}</a>
         @endcan
     </div>
-    <h1 class="page-title">{{ __('traditional_ceremony.list') }} <small>{{ __('app.total') }} : {{ $traditionalCeremonies->total() }} {{ __('traditional_ceremony.traditional_ceremony') }}</small></h1>
+    <h3 class="page-title">{{ __('traditional_ceremony.list') }} <small>{{ __('app.total') }} : {{ $traditionalCeremonies->total() }} {{ __('traditional_ceremony.traditional_ceremony') }}</small></h3>
 </div>
 
 <div class="row">
