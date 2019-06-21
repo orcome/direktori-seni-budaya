@@ -14,8 +14,8 @@
                     <p>{{ $culturalHeritage->name }}</p>
                     <label class="form-label text-primary">{{ __('cultural_heritage.type') }}</label>
                     <p>{{ $culturalHeritage->type }}</p>
-                    <label class="form-label text-primary">{{ __('cultural_heritage.sub_district') }}</label>
-                    <p>{{ $culturalHeritage->sub_district }}</p>
+                    <label class="form-label text-primary">{{ __('cultural_heritage.sub_district_id') }}</label>
+                    <p>{{ $culturalHeritage->sub_district_id }}</p>
                     <label class="form-label text-primary">{{ __('cultural_heritage.village') }}</label>
                     <p>{{ $culturalHeritage->village }}</p>
                     <label class="form-label text-primary">{{ __('cultural_heritage.description') }}</label>
@@ -51,9 +51,9 @@
                         {!! $errors->first('type', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
-                        <label for="sub_district" class="form-label">{{ __('cultural_heritage.sub_district') }} <span class="form-required">*</span></label>
-                        <input id="sub_district" type="text" class="form-control{{ $errors->has('sub_district') ? ' is-invalid' : '' }}" name="sub_district" value="{{ old('sub_district', $culturalHeritage->sub_district) }}" required>
-                        {!! $errors->first('sub_district', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                        <label for="sub_district_id" class="form-label">{{ __('cultural_heritage.sub_district_id') }} <span class="form-required">*</span></label>
+                        <input id="sub_district_id" type="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id', $culturalHeritage->sub_district_id) }}" required>
+                        {!! $errors->first('sub_district_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
                         <label for="village" class="form-label">{{ __('cultural_heritage.village') }} <span class="form-required">*</span></label>

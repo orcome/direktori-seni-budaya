@@ -28,9 +28,9 @@ return [
     'undeleteable'   => 'Data Cagar Budaya tidak dapat dihapus.',
 
     // Attributes
-    'name'         => 'Nama Cagar Budaya',
-    'type'         => 'Jenis',
-    'sub_district' => 'Kecamatan',
-    'village'      => 'Desa',
-    'description'  => 'Keterangan',
+    'name'            => 'Nama Cagar Budaya',
+    'type'            => 'Jenis',
+    'sub_district_id' => 'Kecamatan',
+    'village'         => 'Desa',
+    'description'     => 'Keterangan',
 ];

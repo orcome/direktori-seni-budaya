@@ -3,8 +3,9 @@
 namespace Tests\Unit\Policies;
 
 use App\ArtStudio;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\SubDistrict;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ArtStudioPolicyTest extends TestCase
 {
@@ -21,7 +22,10 @@ class ArtStudioPolicyTest extends TestCase
     public function user_can_view_art_studio()
     {
         $user = $this->createUser();
-        $artStudio = factory(ArtStudio::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $artStudio = factory(ArtStudio::class)->create([
+            'sub_district_id' => $subDistrict->id,
+        ]);
         $this->assertTrue($user->can('view', $artStudio));
     }
 
@@ -29,7 +33,10 @@ class ArtStudioPolicyTest extends TestCase
     public function user_can_update_art_studio()
     {
         $user = $this->createUser();
-        $artStudio = factory(ArtStudio::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $artStudio = factory(ArtStudio::class)->create([
+            'sub_district_id' => $subDistrict->id,
+        ]);
         $this->assertTrue($user->can('update', $artStudio));
     }
 
@@ -37,7 +44,10 @@ class ArtStudioPolicyTest extends TestCase
     public function user_can_delete_art_studio()
     {
         $user = $this->createUser();
-        $artStudio = factory(ArtStudio::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $artStudio = factory(ArtStudio::class)->create([
+            'sub_district_id' => $subDistrict->id,
+        ]);
         $this->assertTrue($user->can('delete', $artStudio));
     }
 }

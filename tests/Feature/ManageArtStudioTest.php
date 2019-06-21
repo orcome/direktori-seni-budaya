@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\ArtStudio;
 use Tests\TestCase;
+use App\SubDistrict;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ManageArtStudioTest extends TestCase
@@ -13,7 +14,10 @@ class ManageArtStudioTest extends TestCase
     /** @test */
     public function user_can_see_art_studio_list_in_art_studio_index_page()
     {
-        $artStudio = factory(ArtStudio::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $artStudio = factory(ArtStudio::class)->create([
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         $this->loginAsUser();
         $this->visitRoute('art_studios.index');
@@ -23,13 +27,13 @@ class ManageArtStudioTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'         => 'Sanggar Tingang Menteng Panjung Tarung',
-            'sub_district' => 'Kecamatan Selat',
-            'village'      => 'Selat Dalam',
-            'leader'       => 'Erliansyah',
-            'art_type'     => 'Sanggar Tari',
-            'building'     => 0, // 0: Tidak Ada, 1: Ada
-            'description'  => 'Diupayakan Pembangunan Gedungnya melalui Pemerintah Kabupaten Pemerintah Propinsi dan Pemerintah Pusat',
+            'name'            => 'Sanggar Tingang Menteng Panjung Tarung',
+            'sub_district_id' => 1,
+            'village'         => 'Selat Dalam',
+            'leader'          => 'Erliansyah',
+            'art_type'        => 'Sanggar Tari',
+            'building'        => 0, // 0: Tidak Ada, 1: Ada
+            'description'     => 'Diupayakan Pembangunan Gedungnya melalui Pemerintah Kabupaten Pemerintah Propinsi dan Pemerintah Pusat',
         ], $overrides);
     }
 
@@ -37,12 +41,16 @@ class ManageArtStudioTest extends TestCase
     public function user_can_create_a_art_studio()
     {
         $this->loginAsUser();
+        $subDistrict = factory(SubDistrict::class)->create();
+
         $this->visitRoute('art_studios.index');
 
         $this->click(__('art_studio.create'));
         $this->seeRouteIs('art_studios.create');
 
-        $this->submitForm(__('art_studio.create'), $this->getCreateFields());
+        $this->submitForm(__('art_studio.create'), $this->getCreateFields([
+            'sub_district_id' => $subDistrict->id,
+        ]));
 
         $this->seeRouteIs('art_studios.show', ArtStudio::first());
 
@@ -74,13 +82,13 @@ class ManageArtStudioTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'         => 'Sanggar Riak Nyalong',
-            'sub_district' => 'Kecamatan Selat',
-            'village'      => 'Selat Dalam',
-            'leader'       => 'Ragus Rumbang',
-            'art_type'     => 'Sanggar Tari',
-            'building'     => 0, // 0: Tidak Ada, 1: Ada
-            'description'  => 'Diupayakan Pembangunan Gedungnya melalui Pemerintah Kabupaten Pemerintah Propinsi dan Pemerintah Pusat',
+            'name'            => 'Sanggar Riak Nyalong',
+            'sub_district_id' => 1,
+            'village'         => 'Selat Dalam',
+            'leader'          => 'Ragus Rumbang',
+            'art_type'        => 'Sanggar Tari',
+            'building'        => 0, // 0: Tidak Ada, 1: Ada
+            'description'     => 'Diupayakan Pembangunan Gedungnya melalui Pemerintah Kabupaten Pemerintah Propinsi dan Pemerintah Pusat',
         ], $overrides);
     }
 
@@ -88,13 +96,16 @@ class ManageArtStudioTest extends TestCase
     public function user_can_edit_a_art_studio()
     {
         $this->loginAsUser();
+        $subDistrict = factory(SubDistrict::class)->create();
         $artStudio = factory(ArtStudio::class)->create(['name' => 'Testing 123']);
 
         $this->visitRoute('art_studios.show', $artStudio);
         $this->click('edit-art_studio-'.$artStudio->id);
         $this->seeRouteIs('art_studios.edit', $artStudio);
 
-        $this->submitForm(__('art_studio.update'), $this->getEditFields());
+        $this->submitForm(__('art_studio.update'), $this->getEditFields([
+            'sub_district_id' => $subDistrict->id,
+        ]));
 
         $this->seeRouteIs('art_studios.show', $artStudio);
 
@@ -107,7 +118,11 @@ class ManageArtStudioTest extends TestCase
     public function validate_art_studio_name_update_is_required()
     {
         $this->loginAsUser();
-        $art_studio = factory(ArtStudio::class)->create(['name' => 'Testing 123']);
+        $subDistrict = factory(SubDistrict::class)->create();
+        $art_studio = factory(ArtStudio::class)->create([
+            'name'            => 'Testing 123',
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         // name empty
         $this->patch(route('art_studios.update', $art_studio), $this->getEditFields(['name' => '']));
@@ -118,7 +133,11 @@ class ManageArtStudioTest extends TestCase
     public function validate_art_studio_description_update_is_not_more_than_255_characters()
     {
         $this->loginAsUser();
-        $art_studio = factory(ArtStudio::class)->create(['name' => 'Testing 123']);
+        $subDistrict = factory(SubDistrict::class)->create();
+        $art_studio = factory(ArtStudio::class)->create([
+            'name'            => 'Testing 123',
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         // description 256 characters
         $this->patch(route('art_studios.update', $art_studio), $this->getEditFields([
@@ -131,7 +150,11 @@ class ManageArtStudioTest extends TestCase
     public function user_can_delete_a_art_studio()
     {
         $this->loginAsUser();
-        $artStudio = factory(ArtStudio::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $artStudio = factory(ArtStudio::class)->create([
+            'name'            => 'Testing 123',
+            'sub_district_id' => $subDistrict->id,
+        ]);
         factory(ArtStudio::class)->create();
 
         $this->visitRoute('art_studios.edit', $artStudio);

@@ -4,8 +4,9 @@ namespace Tests\Unit\Models;
 
 use App\User;
 use App\ArtStudio;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\SubDistrict;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ArtStudioTest extends TestCase
 {
@@ -14,7 +15,10 @@ class ArtStudioTest extends TestCase
     /** @test */
     public function a_art_studio_has_name_link_attribute()
     {
-        $artStudio = factory(ArtStudio::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $artStudio = factory(ArtStudio::class)->create([
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         $title = __('app.show_detail_title', [
             'name' => $artStudio->name, 'type' => __('art_studio.art_studio'),

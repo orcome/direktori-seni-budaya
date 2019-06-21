@@ -3,9 +3,10 @@
 namespace Tests\Unit\Models;
 
 use App\User;
+use Tests\TestCase;
+use App\SubDistrict;
 use App\CulturalHeritage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 
 class CulturalHeritageTest extends TestCase
 {
@@ -14,7 +15,10 @@ class CulturalHeritageTest extends TestCase
     /** @test */
     public function a_cultural_heritage_has_name_link_attribute()
     {
-        $culturalHeritage = factory(CulturalHeritage::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $culturalHeritage = factory(CulturalHeritage::class)->create([
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         $title = __('app.show_detail_title', [
             'name' => $culturalHeritage->name, 'type' => __('cultural_heritage.cultural_heritage'),

@@ -28,11 +28,11 @@ return [
     'undeleteable'   => 'Data Sanggar Seni tidak dapat dihapus.',
 
     // Attributes
-    'name'         => 'Nama Sanggar Seni',
-    'sub_district' => 'Kecamatan',
-    'village'      => 'Desa',
-    'leader'       => 'Nama Pimpinan Sanggar',
-    'art_type'     => 'Jenis Sanggar',
-    'building'     => 'Tersedia Bangunan Tempat Berlatih',
-    'description'  => 'Keterangan',
+    'name'            => 'Nama Sanggar Seni',
+    'sub_district_id' => 'Kecamatan',
+    'village'         => 'Desa',
+    'leader'          => 'Nama Pimpinan Sanggar',
+    'art_type'        => 'Jenis Sanggar',
+    'building'        => 'Tersedia Bangunan Tempat Berlatih',
+    'description'     => 'Keterangan',
 ];

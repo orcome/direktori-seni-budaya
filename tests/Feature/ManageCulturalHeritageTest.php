@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\SubDistrict;
 use App\CulturalHeritage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -13,7 +14,10 @@ class ManageCulturalHeritageTest extends TestCase
     /** @test */
     public function user_can_see_cultural_heritage_list_in_cultural_heritage_index_page()
     {
-        $culturalHeritage = factory(CulturalHeritage::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $culturalHeritage = factory(CulturalHeritage::class)->create([
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         $this->loginAsUser();
         $this->visitRoute('cultural_heritages.index');
@@ -23,11 +27,11 @@ class ManageCulturalHeritageTest extends TestCase
     private function getCreateFields(array $overrides = [])
     {
         return array_merge([
-            'name'         => 'Situs Cagar Budaya Gereja Imanuel Madomai',
-            'type'         => 'Situs',
-            'sub_district' => 'Kapuas Barat',
-            'village'      => 'Saka Mangkahai',
-            'description'  => 'CulturalHeritage 1 description',
+            'name'            => 'Situs Cagar Budaya Gereja Imanuel Madomai',
+            'type'            => 'Situs',
+            'sub_district_id' => 1,
+            'village'         => 'Saka Mangkahai',
+            'description'     => 'CulturalHeritage 1 description',
         ], $overrides);
     }
 
@@ -35,12 +39,15 @@ class ManageCulturalHeritageTest extends TestCase
     public function user_can_create_a_cultural_heritage()
     {
         $this->loginAsUser();
+        $subDistrict = factory(SubDistrict::class)->create();
         $this->visitRoute('cultural_heritages.index');
 
         $this->click(__('cultural_heritage.create'));
         $this->seeRouteIs('cultural_heritages.create');
 
-        $this->submitForm(__('cultural_heritage.create'), $this->getCreateFields());
+        $this->submitForm(__('cultural_heritage.create'), $this->getCreateFields([
+            'sub_district_id' => $subDistrict->id,
+        ]));
 
         $this->seeRouteIs('cultural_heritages.show', CulturalHeritage::first());
 
@@ -84,11 +91,11 @@ class ManageCulturalHeritageTest extends TestCase
     private function getEditFields(array $overrides = [])
     {
         return array_merge([
-            'name'         => 'Situs Cagar Budaya Kuta Bataguh',
-            'type'         => 'Situs',
-            'sub_district' => 'Bataguh',
-            'village'      => 'Ds.Lunuk',
-            'description'  => 'CulturalHeritage 1 description',
+            'name'            => 'Situs Cagar Budaya Kuta Bataguh',
+            'type'            => 'Situs',
+            'sub_district_id' => 1,
+            'village'         => 'Ds.Lunuk',
+            'description'     => 'CulturalHeritage 1 description',
         ], $overrides);
     }
 
@@ -96,13 +103,16 @@ class ManageCulturalHeritageTest extends TestCase
     public function user_can_edit_a_cultural_heritage()
     {
         $this->loginAsUser();
+        $subDistrict = factory(SubDistrict::class)->create();
         $culturalHeritage = factory(CulturalHeritage::class)->create(['name' => 'Testing 123']);
 
         $this->visitRoute('cultural_heritages.show', $culturalHeritage);
         $this->click('edit-cultural_heritage-'.$culturalHeritage->id);
         $this->seeRouteIs('cultural_heritages.edit', $culturalHeritage);
 
-        $this->submitForm(__('cultural_heritage.update'), $this->getEditFields());
+        $this->submitForm(__('cultural_heritage.update'), $this->getEditFields([
+            'sub_district_id' => $subDistrict->id,
+        ]));
 
         $this->seeRouteIs('cultural_heritages.show', $culturalHeritage);
 
@@ -115,7 +125,11 @@ class ManageCulturalHeritageTest extends TestCase
     public function validate_cultural_heritage_name_update_is_required()
     {
         $this->loginAsUser();
-        $cultural_heritage = factory(CulturalHeritage::class)->create(['name' => 'Testing 123']);
+        $subDistrict = factory(SubDistrict::class)->create();
+        $cultural_heritage = factory(CulturalHeritage::class)->create([
+            'name'            => 'Testing 123',
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         // name empty
         $this->patch(route('cultural_heritages.update', $cultural_heritage), $this->getEditFields(['name' => '']));
@@ -126,7 +140,11 @@ class ManageCulturalHeritageTest extends TestCase
     public function validate_cultural_heritage_name_update_is_not_more_than_60_characters()
     {
         $this->loginAsUser();
-        $cultural_heritage = factory(CulturalHeritage::class)->create(['name' => 'Testing 123']);
+        $subDistrict = factory(SubDistrict::class)->create();
+        $cultural_heritage = factory(CulturalHeritage::class)->create([
+            'name'            => 'Testing 123',
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         // name 70 characters
         $this->patch(route('cultural_heritages.update', $cultural_heritage), $this->getEditFields([
@@ -139,7 +157,11 @@ class ManageCulturalHeritageTest extends TestCase
     public function validate_cultural_heritage_description_update_is_not_more_than_255_characters()
     {
         $this->loginAsUser();
-        $cultural_heritage = factory(CulturalHeritage::class)->create(['name' => 'Testing 123']);
+        $subDistrict = factory(SubDistrict::class)->create();
+        $cultural_heritage = factory(CulturalHeritage::class)->create([
+            'name'            => 'Testing 123',
+            'sub_district_id' => $subDistrict->id,
+        ]);
 
         // description 256 characters
         $this->patch(route('cultural_heritages.update', $cultural_heritage), $this->getEditFields([
@@ -152,7 +174,10 @@ class ManageCulturalHeritageTest extends TestCase
     public function user_can_delete_a_cultural_heritage()
     {
         $this->loginAsUser();
-        $culturalHeritage = factory(CulturalHeritage::class)->create();
+        $subDistrict = factory(SubDistrict::class)->create();
+        $culturalHeritage = factory(CulturalHeritage::class)->create([
+            'sub_district_id' => $subDistrict->id,
+        ]);
         factory(CulturalHeritage::class)->create();
 
         $this->visitRoute('cultural_heritages.edit', $culturalHeritage);

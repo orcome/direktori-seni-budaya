@@ -16,9 +16,9 @@
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
-                        <label for="sub_district" class="form-label">{{ __('art_studio.sub_district') }} <span class="form-required">*</span></label>
-                        <input id="sub_district" type="text" class="form-control{{ $errors->has('sub_district') ? ' is-invalid' : '' }}" name="sub_district" value="{{ old('sub_district') }}" required>
-                        {!! $errors->first('sub_district', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                        <label for="sub_district_id" class="form-label">{{ __('art_studio.sub_district_id') }} <span class="form-required">*</span></label>
+                        <input id="sub_district_id" type="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id') }}" required>
+                        {!! $errors->first('sub_district_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
                         <label for="village" class="form-label">{{ __('art_studio.village') }}</label>

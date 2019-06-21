@@ -12,8 +12,8 @@
                 <div class="card-body">
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.name') }}</label>
                     <p  style="margin-bottom:6px">{{ $artStudio->name }}</p>
-                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.sub_district') }}</label>
-                    <p  style="margin-bottom:6px">{{ $artStudio->sub_district }}</p>
+                    <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.sub_district_id') }}</label>
+                    <p  style="margin-bottom:6px">{{ $artStudio->sub_district_id }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.village') }}</label>
                     <p  style="margin-bottom:6px">{{ $artStudio->village }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.leader') }}</label>
@@ -50,14 +50,9 @@
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
-                        <label for="sub_district" class="form-label">{{ __('art_studio.sub_district') }} <span class="form-required">*</span></label>
-                        <input id="sub_district" type="text" class="form-control{{ $errors->has('sub_district') ? ' is-invalid' : '' }}" name="sub_district" value="{{ old('sub_district', $artStudio->sub_district) }}" required>
-                        {!! $errors->first('sub_district', '<span class="invalid-feedback" role="alert">:message</span>') !!}
-                    </div>
-                    <div class="form-group">
-                        <label for="sub_district" class="form-label">{{ __('art_studio.sub_district') }} <span class="form-required">*</span></label>
-                        <input id="sub_district" type="text" class="form-control{{ $errors->has('sub_district') ? ' is-invalid' : '' }}" name="sub_district" value="{{ old('sub_district', $artStudio->sub_district) }}" required>
-                        {!! $errors->first('sub_district', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                        <label for="sub_district_id" class="form-label">{{ __('art_studio.sub_district_id') }} <span class="form-required">*</span></label>
+                        <input id="sub_district_id" type="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id', $artStudio->sub_district_id) }}" required>
+                        {!! $errors->first('sub_district_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
                         <label for="village" class="form-label">{{ __('art_studio.village') }} <span class="form-required">*</span></label>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArtStudio extends Model
 {
-    protected $fillable = ['name', 'sub_district', 'village',
+    protected $fillable = ['name', 'sub_district_id', 'village',
         'leader', 'art_type', 'building', 'description', 'creator_id'];
 
     public function getNameLinkAttribute()

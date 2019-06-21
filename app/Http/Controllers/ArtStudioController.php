@@ -44,13 +44,13 @@ class ArtStudioController extends Controller
         $this->authorize('create', new ArtStudio);
 
         $newArtStudio = $request->validate([
-            'name'         => 'required|max:255',
-            'sub_district' => 'required|max:255',
-            'village'      => 'nullable|max:255',
-            'leader'       => 'required|max:60',
-            'art_type'     => 'required|max:255',
-            'building'     => 'required|boolean',
-            'description'  => 'nullable|max:255',
+            'name'            => 'required|max:255',
+            'sub_district_id' => 'required',
+            'village'         => 'nullable|max:255',
+            'leader'          => 'required|max:60',
+            'art_type'        => 'required|max:255',
+            'building'        => 'required|boolean',
+            'description'     => 'nullable|max:255',
         ]);
         $newArtStudio['creator_id'] = auth()->id();
 
@@ -95,13 +95,13 @@ class ArtStudioController extends Controller
         $this->authorize('update', $artStudio);
 
         $artStudioData = $request->validate([
-            'name'         => 'required|max:255',
-            'sub_district' => 'required|max:255',
-            'village'      => 'nullable|max:255',
-            'leader'       => 'required|max:60',
-            'art_type'     => 'required|max:255',
-            'building'     => 'required|boolean',
-            'description'  => 'nullable|max:255',
+            'name'            => 'required|max:255',
+            'sub_district_id' => 'required',
+            'village'         => 'nullable|max:255',
+            'leader'          => 'required|max:60',
+            'art_type'        => 'required|max:255',
+            'building'        => 'required|boolean',
+            'description'     => 'nullable|max:255',
         ]);
         $artStudio->update($artStudioData);
 

@@ -16,7 +16,7 @@ class CreateArtStudiosTable extends Migration
         Schema::create('art_studios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('sub_district');
+            $table->unsignedBigInteger('sub_district_id');
             $table->string('village')->nullable();
             $table->string('leader', 60);
             $table->string('art_type');
@@ -26,6 +26,7 @@ class CreateArtStudiosTable extends Migration
             $table->timestamps();
 
             $table->foreign('creator_id')->references('id')->on('users')->onDelete('restrict');
+            $table->foreign('sub_district_id')->references('id')->on('sub_districts')->onDelete('restrict');
         });
     }
 
