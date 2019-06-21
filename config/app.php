@@ -14,7 +14,7 @@ return [
     */
 
     // 'name' => env('APP_NAME', 'Laravel'),
-    'name' => 'Seni Budaya',
+    'name' => 'Sistem Informasi Seni & Budaya',
 
     /*
     |--------------------------------------------------------------------------

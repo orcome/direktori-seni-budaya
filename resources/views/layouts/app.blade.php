@@ -19,7 +19,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/font-awesome-4.7.0/css/font-awesome.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"> --}}
+
+    <style>
+    .icon_dashboard {
+        color: white;
+    }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -51,29 +56,20 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('art_studios.index') }}">{{ __('art_studio.list') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('traditional_music_instruments.index') }}">{{ __('traditional_music_instrument.list') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('traditional_dances.index') }}">{{ __('traditional_dance.list') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('traditional_ceremonies.index') }}">{{ __('traditional_ceremony.list') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('ritual_ceremonies.index') }}">{{ __('ritual_ceremony.list') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('traditional_games.index') }}">{{ __('traditional_game.list') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cultural_heritages.index') }}">{{ __('cultural_heritage.list') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('natural_artificial_tourisms.index') }}">{{ __('natural_artificial_tourism.list') }}</a>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Daftar Menu <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('art_studios.index') }}">{{ __('art_studio.list') }}</a>
+                                        <a class="dropdown-item" href="{{ route('traditional_music_instruments.index') }}">{{ __('traditional_music_instrument.list') }}</a>
+                                        <a class="dropdown-item" href="{{ route('traditional_dances.index') }}">{{ __('traditional_dance.list') }}</a>
+                                        <a class="dropdown-item" href="{{ route('traditional_ceremonies.index') }}">{{ __('traditional_ceremony.list') }}</a>
+                                        <a class="dropdown-item" href="{{ route('ritual_ceremonies.index') }}">{{ __('ritual_ceremony.list') }}</a>
+                                        <a class="dropdown-item" href="{{ route('traditional_games.index') }}">{{ __('traditional_game.list') }}</a>
+                                        <a class="dropdown-item" href="{{ route('cultural_heritages.index') }}">{{ __('cultural_heritage.list') }}</a>
+                                        <a class="dropdown-item" href="{{ route('natural_artificial_tourisms.index') }}">{{ __('natural_artificial_tourism.list') }}</a>
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
