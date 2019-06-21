@@ -7,6 +7,7 @@
     <div class="float-right">
         @can('create', new App\SubDistrict)
             <a href="{{ route('sub_districts.index', ['action' => 'create']) }}" class="btn btn-success">{{ __('sub_district.create') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
     <h1 class="page-title">{{ __('sub_district.list') }} <small>{{ __('app.total') }} : {{ $subDistricts->total() }} {{ __('sub_district.sub_district') }}</small></h1>

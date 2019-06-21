@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\SubDistrict;
 use App\CulturalHeritage;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,9 @@ class CulturalHeritageController extends Controller
     {
         $this->authorize('create', new CulturalHeritage);
 
-        return view('cultural_heritages.create');
+        $subDistricts = SubDistrict::all();
+
+        return view('cultural_heritages.create', compact('subDistricts'));
     }
 
     /**
@@ -78,7 +81,9 @@ class CulturalHeritageController extends Controller
     {
         $this->authorize('update', $culturalHeritage);
 
-        return view('cultural_heritages.edit', compact('culturalHeritage'));
+        $subDistricts = SubDistrict::all();
+
+        return view('cultural_heritages.edit', compact('culturalHeritage', 'subDistricts'));
     }
 
     /**

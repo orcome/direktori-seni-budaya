@@ -21,8 +21,13 @@
                         {!! $errors->first('type', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
-                        <label for="sub_district_id" class="form-label">{{ __('cultural_heritage.sub_district_id') }} <span class="form-required">*</span></label>
-                        <input id="sub_district_id" sub_district_id="text" class="form-control{{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}" name="sub_district_id" value="{{ old('sub_district_id') }}" required>
+                        <label for="sub_district_id" class="form-label">{{ __('art_studio.sub_district_id') }} <span class="form-required">*</span></label>
+                        <select name="sub_district_id" id="sub_district_id" class="form-control {{ $errors->has('sub_district_id') ? ' is-invalid' : '' }}">
+                            <option value="">-- {{ __('sub_district.list') }} --</option>
+                            @foreach ($subDistricts as $key => $subDistrict)
+                                <option value="{{ $subDistrict->id }}">{{ $subDistrict->name }}</option>
+                            @endforeach
+                        </select>
                         {!! $errors->first('sub_district_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

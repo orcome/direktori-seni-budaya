@@ -76,7 +76,7 @@
                                     <i class="fa fa-cogs"></i> {{ __('app.setting') }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('sub_districts.index') }}">Input Kecamatan</a>
+                                    <a class="dropdown-item" href="{{ route('sub_districts.index') }}">{{ __('sub_district.list') }}</a>
                                     <a class="dropdown-item" href="#">Ganti Password</a>
                                     <a class="dropdown-item" href="#">Backup Restore Database</a>
                                 </div>
