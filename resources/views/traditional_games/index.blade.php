@@ -7,9 +7,10 @@
     <div class="float-right">
         @can('create', new App\TraditionalGame)
             <a href="{{ route('traditional_games.create') }}" class="btn btn-success">{{ __('traditional_game.create') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
-    <h3 class="page-title">{{ __('traditional_game.list') }} <small>{{ __('app.total') }} : {{ $traditionalGames->total() }} {{ __('traditional_game.traditional_game') }}</small></h3>
+    <h3 class="page-title">{{ __('traditional_game.list') }} | <small>{{ __('app.total') }} : {{ $traditionalGames->total() }} {{ __('traditional_game.traditional_game') }}</small></h3>
 </div>
 
 <div class="row">

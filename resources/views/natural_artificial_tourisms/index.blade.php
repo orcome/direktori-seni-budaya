@@ -7,9 +7,10 @@
     <div class="float-right">
         @can('create', new App\NaturalArtificialTourism)
             <a href="{{ route('natural_artificial_tourisms.create') }}" class="btn btn-success">{{ __('natural_artificial_tourism.create') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
-    <h3 class="page-title">{{ __('natural_artificial_tourism.list') }} <small>{{ __('app.total') }} : {{ $naturalArtificialTourisms->total() }} {{ __('natural_artificial_tourism.natural_artificial_tourism') }}</small></h3>
+    <h3 class="page-title">{{ __('natural_artificial_tourism.list') }} | <small>{{ __('app.total') }} : {{ $naturalArtificialTourisms->total() }} {{ __('natural_artificial_tourism.natural_artificial_tourism') }}</small></h3>
 </div>
 
 <div class="row">

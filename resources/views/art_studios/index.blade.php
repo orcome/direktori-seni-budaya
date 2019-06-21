@@ -7,9 +7,10 @@
     <div class="float-right">
         @can('create', new App\ArtStudio)
             <a href="{{ route('art_studios.create') }}" class="btn btn-success">{{ __('art_studio.create') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
-    <h3 class="page-title">{{ __('art_studio.list') }} <small>{{ __('app.total') }} : {{ $artStudios->total() }} {{ __('art_studio.art_studio') }}</small></h3>
+    <h3 class="page-title">{{ __('art_studio.list') }} | <small>{{ __('app.total') }} : {{ $artStudios->total() }} {{ __('art_studio.art_studio') }}</small></h3>
 </div>
 
 <div class="row">

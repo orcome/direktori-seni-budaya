@@ -7,9 +7,10 @@
     <div class="float-right">
         @can('create', new App\TraditionalCeremony)
             <a href="{{ route('traditional_ceremonies.create') }}" class="btn btn-success">{{ __('traditional_ceremony.create') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
-    <h3 class="page-title">{{ __('traditional_ceremony.list') }} <small>{{ __('app.total') }} : {{ $traditionalCeremonies->total() }} {{ __('traditional_ceremony.traditional_ceremony') }}</small></h3>
+    <h3 class="page-title">{{ __('traditional_ceremony.list') }} | <small>{{ __('app.total') }} : {{ $traditionalCeremonies->total() }} {{ __('traditional_ceremony.traditional_ceremony') }}</small></h3>
 </div>
 
 <div class="row">

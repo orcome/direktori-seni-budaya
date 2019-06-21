@@ -58,22 +58,32 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Daftar Menu <span class="caret"></span>
+                                    <i class="fa fa-bars"></i> {{ __('app.menu_list') }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('art_studios.index') }}">{{ __('art_studio.list') }}</a>
-                                        <a class="dropdown-item" href="{{ route('traditional_music_instruments.index') }}">{{ __('traditional_music_instrument.list') }}</a>
-                                        <a class="dropdown-item" href="{{ route('traditional_dances.index') }}">{{ __('traditional_dance.list') }}</a>
-                                        <a class="dropdown-item" href="{{ route('traditional_ceremonies.index') }}">{{ __('traditional_ceremony.list') }}</a>
-                                        <a class="dropdown-item" href="{{ route('ritual_ceremonies.index') }}">{{ __('ritual_ceremony.list') }}</a>
-                                        <a class="dropdown-item" href="{{ route('traditional_games.index') }}">{{ __('traditional_game.list') }}</a>
-                                        <a class="dropdown-item" href="{{ route('cultural_heritages.index') }}">{{ __('cultural_heritage.list') }}</a>
-                                        <a class="dropdown-item" href="{{ route('natural_artificial_tourisms.index') }}">{{ __('natural_artificial_tourism.list') }}</a>
+                                    <a class="dropdown-item" href="{{ route('art_studios.index') }}">{{ __('art_studio.list') }}</a>
+                                    <a class="dropdown-item" href="{{ route('traditional_music_instruments.index') }}">{{ __('traditional_music_instrument.list') }}</a>
+                                    <a class="dropdown-item" href="{{ route('traditional_dances.index') }}">{{ __('traditional_dance.list') }}</a>
+                                    <a class="dropdown-item" href="{{ route('traditional_ceremonies.index') }}">{{ __('traditional_ceremony.list') }}</a>
+                                    <a class="dropdown-item" href="{{ route('ritual_ceremonies.index') }}">{{ __('ritual_ceremony.list') }}</a>
+                                    <a class="dropdown-item" href="{{ route('traditional_games.index') }}">{{ __('traditional_game.list') }}</a>
+                                    <a class="dropdown-item" href="{{ route('cultural_heritages.index') }}">{{ __('cultural_heritage.list') }}</a>
+                                    <a class="dropdown-item" href="{{ route('natural_artificial_tourisms.index') }}">{{ __('natural_artificial_tourism.list') }}</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <i class="fa fa-cogs"></i> {{ __('app.setting') }} <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Input Kecamatan</a>
+                                    <a class="dropdown-item" href="#">Ganti Password</a>
+                                    <a class="dropdown-item" href="#">Backup Restore Database</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

@@ -7,9 +7,10 @@
     <div class="float-right">
         @can('create', new App\TraditionalMusicInstrument)
             <a href="{{ route('traditional_music_instruments.create') }}" class="btn btn-success">{{ __('traditional_music_instrument.create') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
-    <h3 class="page-title">{{ __('traditional_music_instrument.list') }} <small>{{ __('app.total') }} : {{ $traditionalMusicInstruments->total() }} {{ __('traditional_music_instrument.traditional_music_instrument') }}</small></h3>
+    <h3 class="page-title">{{ __('traditional_music_instrument.list') }} | <small>{{ __('app.total') }} : {{ $traditionalMusicInstruments->total() }} {{ __('traditional_music_instrument.traditional_music_instrument') }}</small></h3>
 </div>
 
 <div class="row">

@@ -7,9 +7,10 @@
     <div class="float-right">
         @can('create', new App\CulturalHeritage)
             <a href="{{ route('cultural_heritages.create') }}" class="btn btn-success">{{ __('cultural_heritage.create') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
-    <h3 class="page-title">{{ __('cultural_heritage.list') }} <small>{{ __('app.total') }} : {{ $culturalHeritages->total() }} {{ __('cultural_heritage.cultural_heritage') }}</small></h3>
+    <h3 class="page-title">{{ __('cultural_heritage.list') }} | <small>{{ __('app.total') }} : {{ $culturalHeritages->total() }} {{ __('cultural_heritage.cultural_heritage') }}</small></h3>
 </div>
 
 <div class="row">
