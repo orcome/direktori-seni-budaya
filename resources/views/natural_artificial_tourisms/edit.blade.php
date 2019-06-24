@@ -13,7 +13,7 @@
                     <label class="form-label text-primary">{{ __('natural_artificial_tourism.name') }}</label>
                     <p>{{ $naturalArtificialTourism->name }}</p>
                     <label class="form-label text-primary">{{ __('natural_artificial_tourism.category') }}</label>
-                    <p>{{ $naturalArtificialTourism->category }}</p>
+                    <p>{{ $naturalArtificialTourism->category == 0 ? 'Wisata Alam' : 'Wisata Buatan' }}</p>
                     <label class="form-label text-primary">{{ __('natural_artificial_tourism.location') }}</label>
                     <p>{{ $naturalArtificialTourism->location }}</p>
                     <label class="form-label text-primary">{{ __('natural_artificial_tourism.description') }}</label>
@@ -45,7 +45,10 @@
                     </div>
                     <div class="form-group">
                         <label for="category" class="form-label">{{ __('natural_artificial_tourism.category') }} <span class="form-required">*</span></label>
-                        <input id="category" type="text" class="form-control{{ $errors->has('category') ? ' is-invalid' : '' }}" name="category" value="{{ old('category', $naturalArtificialTourism->category) }}" required>
+                        <div class="col-md-6">
+                            <input type="radio" name="category" value="0" {{ $naturalArtificialTourism->category == 0 ? 'checked' : '' }}> Wisata Alam <br>
+                            <input type="radio" name="category" value="1" {{ $naturalArtificialTourism->category == 1 ? 'checked' : '' }}> Wisata Buatan <br>
+                        </div>
                         {!! $errors->first('category', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

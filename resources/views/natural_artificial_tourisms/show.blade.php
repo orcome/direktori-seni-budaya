@@ -11,7 +11,7 @@
                 <table class="table table-sm">
                     <tbody>
                         <tr><td>{{ __('natural_artificial_tourism.name') }}</td><td>{{ $naturalArtificialTourism->name }}</td></tr>
-                        <tr><td>{{ __('natural_artificial_tourism.category') }}</td><td>{{ $naturalArtificialTourism->category }}</td></tr>
+                        <tr><td>{{ __('natural_artificial_tourism.category') }}</td><td>{{ $naturalArtificialTourism->category == 0 ? 'Wisata Alam' : 'Wisata Buatan' }}</td></tr>
                         <tr><td>{{ __('natural_artificial_tourism.location') }}</td><td>{{ $naturalArtificialTourism->location }}</td></tr>
                         <tr><td>{{ __('natural_artificial_tourism.description') }}</td><td>{{ $naturalArtificialTourism->description }}</td></tr>
                     </tbody>
