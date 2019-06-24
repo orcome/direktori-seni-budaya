@@ -33,11 +33,11 @@
             <table class="table table-sm table-responsive-sm table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">{{ __('app.table_no') }}</th>
-                        <th>{{ __('traditional_ceremony.name') }}</th>
-                        <th>{{ __('traditional_ceremony.detail') }}</th>
-                        <th>{{ __('traditional_ceremony.description') }}</th>
-                        <th class="d-print-none text-center">{{ __('app.action') }}</th>
+                        <th width="30" style="vertical-align: middle;" class="text-center">{{ __('app.table_no') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('traditional_ceremony.name') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('traditional_ceremony.detail') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('traditional_ceremony.description') }}</th>
+                        <th width="100" style="vertical-align: middle;" class="d-print-none text-center">{{ __('app.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>

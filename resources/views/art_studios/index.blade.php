@@ -33,14 +33,14 @@
             <table class="table table-sm table-responsive-sm table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">{{ __('app.table_no') }}</th>
-                        <th>{{ __('art_studio.sub_dist_vill') }}</th>
-                        <th>{{ __('art_studio.name') }}</th>
-                        <th>{{ __('art_studio.leader') }}</th>
-                        <th>{{ __('art_studio.art_type') }}</th>
-                        <th>{{ __('art_studio.building') }}</th>
-                        <th>{{ __('art_studio.description') }}</th>
-                        <th class="d-print-none text-center">{{ __('app.action') }}</th>
+                        <th width="30" style="vertical-align: middle;" class="text-center">{{ __('app.table_no') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('art_studio.sub_dist_vill') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('art_studio.name') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('art_studio.leader') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('art_studio.art_type') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('art_studio.building') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('art_studio.description') }}</th>
+                        <th width="100" style="vertical-align: middle;" class="d-print-none text-center">{{ __('app.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -33,12 +33,12 @@
             <table class="table table-sm table-responsive-sm table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">{{ __('app.table_no') }}</th>
-                        <th>{{ __('traditional_game.name') }}</th>
-                        <th>{{ __('traditional_game.tools') }}</th>
-                        <th>{{ __('traditional_game.detail') }}</th>
-                        <th>{{ __('traditional_game.description') }}</th>
-                        <th class="d-print-none text-center">{{ __('app.action') }}</th>
+                        <th width="30" style="vertical-align: middle;" class="text-center">{{ __('app.table_no') }}</th>
+                        <th width="170" style="vertical-align: middle;">{{ __('traditional_game.name') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('traditional_game.tools') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('traditional_game.detail') }}</th>
+                        <th width="100" style="vertical-align: middle;">{{ __('traditional_game.description') }}</th>
+                        <th width="100" style="vertical-align: middle;" class="d-print-none text-center">{{ __('app.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
