@@ -30,6 +30,7 @@ return [
     // Attributes
     'name'            => 'Nama Sanggar Seni',
     'sub_district_id' => 'Kecamatan',
+    'sub_dist_vill'   => 'Kec/Desa',
     'village'         => 'Desa',
     'leader'          => 'Nama Pimpinan Sanggar',
     'art_type'        => 'Jenis Sanggar',
