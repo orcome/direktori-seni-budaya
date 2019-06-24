@@ -3,21 +3,24 @@
 @section('title', __('traditional_ceremony.list'))
 
 @section('content')
-<div class="mb-3">
+<div class="d-print-none mb-3">
     <div class="float-right">
         @can('create', new App\TraditionalCeremony)
             <a href="{{ route('traditional_ceremonies.create') }}" class="btn btn-success">{{ __('traditional_ceremony.create') }}</a>
-            <a href="{{ route('home') }}" class="btn btn-danger">{{ __('app.print') }}</a>
+            <a href="" class="btn btn-danger" onclick="window.print()">{{ __('app.print') }}</a>
             <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
     <h3 class="page-title">{{ __('traditional_ceremony.list') }} | <small>{{ __('app.total') }} : {{ $traditionalCeremonies->total() }} {{ __('traditional_ceremony.traditional_ceremony') }}</small></h3>
 </div>
-
+<div class="d-none d-print-block">
+    <h5 class="text-center"><b>UPACARA ADAT</b></h5>
+    <h5 class="text-center"><b>KABUPATEN KAPUAS</b></h5><br>
+</div>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">
+            <div class="d-print-none card-header">
                 <form method="GET" action="" accept-charset="UTF-8" class="form-inline">
                     <div class="form-group">
                         <label for="q" class="form-label">{{ __('traditional_ceremony.search') }}</label>
@@ -34,17 +37,17 @@
                         <th>{{ __('traditional_ceremony.name') }}</th>
                         <th>{{ __('traditional_ceremony.detail') }}</th>
                         <th>{{ __('traditional_ceremony.description') }}</th>
-                        <th class="text-center">{{ __('app.action') }}</th>
+                        <th class="d-print-none text-center">{{ __('app.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($traditionalCeremonies as $key => $traditionalCeremony)
                     <tr>
                         <td class="text-center">{{ $traditionalCeremonies->firstItem() + $key }}</td>
-                        <td>{!! $traditionalCeremony->name_link !!}</td>
-                        <td>{!! $traditionalCeremony->detail !!}</td>
+                        <td>{{ $traditionalCeremony->name }}</td>
+                        <td>{{ $traditionalCeremony->detail }}</td>
                         <td>{{ $traditionalCeremony->description }}</td>
-                        <td class="text-center">
+                        <td class="d-print-none text-center">
                             @can('view', $traditionalCeremony)
                                 <a href="{{ route('traditional_ceremonies.show', $traditionalCeremony) }}" id="show-traditional_ceremony-{{ $traditionalCeremony->id }}">{{ __('app.show') }}</a>
                             @endcan
