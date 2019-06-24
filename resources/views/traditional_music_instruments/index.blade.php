@@ -45,10 +45,10 @@
                     @foreach($traditionalMusicInstruments as $key => $traditionalMusicInstrument)
                     <tr>
                         <td class="text-center">{{ $traditionalMusicInstruments->firstItem() + $key }}</td>
-                        <td>{!! $traditionalMusicInstrument->name !!}</td>
-                        <td>{!! $traditionalMusicInstrument->type !!}</td>
-                        <td>{!! $traditionalMusicInstrument->sum_sub_district !!}</td>
-                        <td>{{ $traditionalMusicInstrument->description }}</td>
+                        <td>{{ $traditionalMusicInstrument->name }}</td>
+                        <td>{{ $traditionalMusicInstrument->type }}</td>
+                        <td>{{ $traditionalMusicInstrument->sum_sub_district.' Kecamatan' }}</td>
+                        <td>{{ $traditionalMusicInstrument->description ?? '-' }}</td>
                         <td class="d-print-none text-center">
                             @can('view', $traditionalMusicInstrument)
                                 <a href="{{ route('traditional_music_instruments.show', $traditionalMusicInstrument) }}" id="show-traditional_music_instrument-{{ $traditionalMusicInstrument->id }}">{{ __('app.show') }}</a>

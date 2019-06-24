@@ -48,7 +48,7 @@
                         <td>{{ $naturalArtificialTourism->name }}</td>
                         <td>{{ $naturalArtificialTourism->category == 0 ? 'Wisata Alam' : 'Wisata Buatan' }}</td>
                         <td>{{ $naturalArtificialTourism->location }}</td>
-                        <td>{{ $naturalArtificialTourism->description }}</td>
+                        <td>{{ $naturalArtificialTourism->description ?? '-' }}</td>
                         <td class="d-print-none text-center">
                             @can('view', $naturalArtificialTourism)
                                 <a href="{{ route('natural_artificial_tourisms.show', $naturalArtificialTourism) }}" id="show-natural_artificial_tourism-{{ $naturalArtificialTourism->id }}">{{ __('app.show') }}</a>

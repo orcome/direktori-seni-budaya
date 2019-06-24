@@ -15,9 +15,9 @@
                     <label class="form-label text-primary">{{ __('traditional_dance.dance_type') }}</label>
                     <p>{{ $traditionalDance->dance_type }}</p>
                     <label class="form-label text-primary">{{ __('traditional_dance.choreographer') }}</label>
-                    <p>{{ $traditionalDance->choreographer }}</p>
+                    <p>{{ $traditionalDance->choreographer ?? '-' }}</p>
                     <label class="form-label text-primary">{{ __('traditional_dance.description') }}</label>
-                    <p>{{ $traditionalDance->description }}</p>
+                    <p>{{ $traditionalDance->description ?? '-' }}</p>
                     {!! $errors->first('traditional_dance_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                 </div>
                 <hr style="margin:0">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label for="choreographer" class="form-label">{{ __('traditional_dance.choreographer') }}</label>
-                        <input id="choreographer" type="text" class="form-control{{ $errors->has('choreographer') ? ' is-invalid' : '' }}" name="choreographer" value="{{ old('choreographer', $traditionalDance->choreographer) }}" required>
+                        <input id="choreographer" type="text" class="form-control{{ $errors->has('choreographer') ? ' is-invalid' : '' }}" name="choreographer" value="{{ old('choreographer', $traditionalDance->choreographer) }}">
                         {!! $errors->first('choreographer', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

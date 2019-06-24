@@ -13,7 +13,7 @@
                         <tr><td>{{ __('traditional_game.name') }}</td><td>{{ $traditionalGame->name }}</td></tr>
                         <tr><td>{{ __('traditional_game.tools') }}</td><td>{{ $traditionalGame->tools }}</td></tr>
                         <tr><td>{{ __('traditional_game.detail') }}</td><td>{{ $traditionalGame->detail }}</td></tr>
-                        <tr><td>{{ __('traditional_game.description') }}</td><td>{{ $traditionalGame->description }}</td></tr>
+                        <tr><td>{{ __('traditional_game.description') }}</td><td>{{ $traditionalGame->description ?? '-' }}</td></tr>
                     </tbody>
                 </table>
             </div>

@@ -15,7 +15,7 @@
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.sub_district_id') }}</label>
                     <p  style="margin-bottom:6px">{{ $artStudio->subDistrict->name }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.village') }}</label>
-                    <p  style="margin-bottom:6px">{{ $artStudio->village }}</p>
+                    <p  style="margin-bottom:6px">{{ $artStudio->village ?? '-' }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.leader') }}</label>
                     <p  style="margin-bottom:6px">{{ $artStudio->leader }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.art_type') }}</label>
@@ -23,7 +23,7 @@
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.building') }}</label>
                     <p  style="margin-bottom:6px">{{ $artStudio->building }}</p>
                     <label class="form-label text-primary" style="margin:0px">{{ __('art_studio.description') }}</label>
-                    <p  style="margin-bottom:6px">{{ $artStudio->description }}</p>
+                    <p  style="margin-bottom:6px">{{ $artStudio->description ?? '-' }}</p>
                     {!! $errors->first('art_studio_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                 </div>
                 <hr style="margin:0">
@@ -60,8 +60,8 @@
                         {!! $errors->first('sub_district_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">
-                        <label for="village" class="form-label">{{ __('art_studio.village') }} <span class="form-required">*</span></label>
-                        <input id="village" type="text" class="form-control{{ $errors->has('village') ? ' is-invalid' : '' }}" name="village" value="{{ old('village', $artStudio->village) }}" required>
+                        <label for="village" class="form-label">{{ __('art_studio.village') }}</label>
+                        <input id="village" type="text" class="form-control{{ $errors->has('village') ? ' is-invalid' : '' }}" name="village" value="{{ old('village', $artStudio->village) }}">
                         {!! $errors->first('village', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

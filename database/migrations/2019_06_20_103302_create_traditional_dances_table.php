@@ -17,7 +17,7 @@ class CreateTraditionalDancesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 60);
             $table->string('dance_type', 60);
-            $table->string('choreographer', 60);
+            $table->string('choreographer', 60)->nullable();
             $table->string('description')->nullable();
             $table->unsignedBigInteger('creator_id');
             $table->timestamps();

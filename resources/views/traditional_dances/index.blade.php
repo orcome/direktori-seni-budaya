@@ -47,8 +47,8 @@
                         <td class="text-center">{{ $traditionalDances->firstItem() + $key }}</td>
                         <td>{{ $traditionalDance->name }}</td>
                         <td>{{ $traditionalDance->dance_type }}</td>
-                        <td>{{ $traditionalDance->choreographer }}</td>
-                        <td>{{ $traditionalDance->description }}</td>
+                        <td>{{ $traditionalDance->choreographer ?? '-' }}</td>
+                        <td>{{ $traditionalDance->description ?? '-' }}</td>
                         <td class="d-print-none text-center">
                             @can('view', $traditionalDance)
                                 <a href="{{ route('traditional_dances.show', $traditionalDance) }}" id="show-traditional_dance-{{ $traditionalDance->id }}">{{ __('app.show') }}</a>

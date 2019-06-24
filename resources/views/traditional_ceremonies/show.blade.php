@@ -12,7 +12,7 @@
                     <tbody>
                         <tr><td>{{ __('traditional_ceremony.name') }}</td><td>{{ $traditionalCeremony->name }}</td></tr>
                         <tr><td>{{ __('traditional_ceremony.detail') }}</td><td>{{ $traditionalCeremony->detail }}</td></tr>
-                        <tr><td>{{ __('traditional_ceremony.description') }}</td><td>{{ $traditionalCeremony->description }}</td></tr>
+                        <tr><td>{{ __('traditional_ceremony.description') }}</td><td>{{ $traditionalCeremony->description ?? '-' }}</td></tr>
                     </tbody>
                 </table>
             </div>

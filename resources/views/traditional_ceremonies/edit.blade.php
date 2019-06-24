@@ -15,7 +15,7 @@
                     <label class="form-label text-primary">{{ __('traditional_ceremony.detail') }}</label>
                     <p>{{ $traditionalCeremony->detail }}</p>
                     <label class="form-label text-primary">{{ __('traditional_ceremony.description') }}</label>
-                    <p>{{ $traditionalCeremony->description }}</p>
+                    <p>{{ $traditionalCeremony->description ?? '-' }}</p>
                     {!! $errors->first('traditional_ceremony_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                 </div>
                 <hr style="margin:0">

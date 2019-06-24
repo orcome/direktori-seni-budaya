@@ -12,11 +12,11 @@
                     <tbody>
                         <tr><td>{{ __('art_studio.name') }}</td><td>{{ $artStudio->name }}</td></tr>
                         <tr><td>{{ __('art_studio.sub_district_id') }}</td><td>{{ $artStudio->subDistrict->name }}</td></tr>
-                        <tr><td>{{ __('art_studio.village') }}</td><td>{{ $artStudio->village }}</td></tr>
+                        <tr><td>{{ __('art_studio.village') }}</td><td>{{ $artStudio->village ?? '-' }}</td></tr>
                         <tr><td>{{ __('art_studio.leader') }}</td><td>{{ $artStudio->leader }}</td></tr>
                         <tr><td>{{ __('art_studio.art_type') }}</td><td>{{ $artStudio->art_type }}</td></tr>
                         <tr><td>{{ __('art_studio.building') }}</td><td>{{ $artStudio->building == 0 ? 'Tidak Ada' : 'Ada' }}</td></tr>
-                        <tr><td>{{ __('art_studio.description') }}</td><td>{{ $artStudio->description }}</td></tr>
+                        <tr><td>{{ __('art_studio.description') }}</td><td>{{ $artStudio->description ?? '-' }}</td></tr>
                     </tbody>
                 </table>
             </div>

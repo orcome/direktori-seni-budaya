@@ -19,7 +19,7 @@
                     <label class="form-label text-primary">{{ __('cultural_heritage.village') }}</label>
                     <p>{{ $culturalHeritage->village }}</p>
                     <label class="form-label text-primary">{{ __('cultural_heritage.description') }}</label>
-                    <p>{{ $culturalHeritage->description }}</p>
+                    <p>{{ $culturalHeritage->description ?? '-' }}</p>
                     {!! $errors->first('cultural_heritage_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                 </div>
                 <hr style="margin:0">

@@ -14,7 +14,7 @@
                         <tr><td>{{ __('cultural_heritage.type') }}</td><td>{{ $culturalHeritage->type }}</td></tr>
                         <tr><td>{{ __('cultural_heritage.sub_district_id') }}</td><td>{{ $culturalHeritage->subDistrict->name }}</td></tr>
                         <tr><td>{{ __('cultural_heritage.village') }}</td><td>{{ $culturalHeritage->village }}</td></tr>
-                        <tr><td>{{ __('cultural_heritage.description') }}</td><td>{{ $culturalHeritage->description }}</td></tr>
+                        <tr><td>{{ __('cultural_heritage.description') }}</td><td>{{ $culturalHeritage->description ?? '-' }}</td></tr>
                     </tbody>
                 </table>
             </div>

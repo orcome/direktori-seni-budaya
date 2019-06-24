@@ -17,7 +17,7 @@
                     <label class="form-label text-primary">{{ __('natural_artificial_tourism.location') }}</label>
                     <p>{{ $naturalArtificialTourism->location }}</p>
                     <label class="form-label text-primary">{{ __('natural_artificial_tourism.description') }}</label>
-                    <p>{{ $naturalArtificialTourism->description }}</p>
+                    <p>{{ $naturalArtificialTourism->description ?? '-' }}</p>
                     {!! $errors->first('natural_artificial_tourism_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                 </div>
                 <hr style="margin:0">

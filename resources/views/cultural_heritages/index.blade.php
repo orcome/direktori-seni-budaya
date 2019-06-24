@@ -50,7 +50,7 @@
                         <td>{{ $culturalHeritage->type }}</td>
                         <td>{{ $culturalHeritage->subDistrict->name }}</td>
                         <td>{{ $culturalHeritage->village }}</td>
-                        <td>{{ $culturalHeritage->description }}</td>
+                        <td>{{ $culturalHeritage->description ?? '-' }}</td>
                         <td class="d-print-none text-center">
                             @can('view', $culturalHeritage)
                                 <a href="{{ route('cultural_heritages.show', $culturalHeritage) }}" id="show-cultural_heritage-{{ $culturalHeritage->id }}">{{ __('app.show') }}</a>

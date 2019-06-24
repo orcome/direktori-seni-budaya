@@ -17,7 +17,7 @@
                     <label class="form-label text-primary">{{ __('traditional_music_instrument.sum_sub_district') }}</label>
                     <p>{{ $traditionalMusicInstrument->sum_sub_district }}</p>
                     <label class="form-label text-primary">{{ __('traditional_music_instrument.description') }}</label>
-                    <p>{{ $traditionalMusicInstrument->description }}</p>
+                    <p>{{ $traditionalMusicInstrument->description ?? '-' }}</p>
                     {!! $errors->first('traditional_music_instrument_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                 </div>
                 <hr style="margin:0">

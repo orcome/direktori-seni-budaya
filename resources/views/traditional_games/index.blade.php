@@ -48,7 +48,7 @@
                         <td>{{ $traditionalGame->name }}</td>
                         <td>{{ $traditionalGame->tools }}</td>
                         <td>{{ $traditionalGame->detail }}</td>
-                        <td>{{ $traditionalGame->description }}</td>
+                        <td>{{ $traditionalGame->description ?? '-' }}</td>
                         <td class="d-print-none text-center">
                             @can('view', $traditionalGame)
                                 <a href="{{ route('traditional_games.show', $traditionalGame) }}" id="show-traditional_game-{{ $traditionalGame->id }}">{{ __('app.show') }}</a>

@@ -52,7 +52,7 @@
                         <td>{{ $artStudio->leader }}</td>
                         <td>{{ $artStudio->art_type }}</td>
                         <td>{{ $artStudio->building == 0 ? 'Tidak Ada' : 'Ada' }}</td>
-                        <td>{{ $artStudio->description }}</td>
+                        <td>{{ $artStudio->description ?? '-' }}</td>
                         <td class="d-print-none text-center">
                             @can('view', $artStudio)
                                 <a href="{{ route('art_studios.show', $artStudio) }}" id="show-art_studio-{{ $artStudio->id }}">{{ __('app.show') }}</a>

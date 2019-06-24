@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="village" class="form-label">{{ __('art_studio.village') }}</label>
-                        <input id="village" type="text" class="form-control{{ $errors->has('village') ? ' is-invalid' : '' }}" name="village" value="{{ old('village') }}" required>
+                        <input id="village" type="text" class="form-control{{ $errors->has('village') ? ' is-invalid' : '' }}" name="village" value="{{ old('village') }}">
                         {!! $errors->first('village', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label for="choreographer" class="form-label">{{ __('traditional_dance.choreographer') }}</label>
-                        <input id="choreographer" type="text" class="form-control{{ $errors->has('choreographer') ? ' is-invalid' : '' }}" name="choreographer" value="{{ old('choreographer') }}" required>
+                        <input id="choreographer" type="text" class="form-control{{ $errors->has('choreographer') ? ' is-invalid' : '' }}" name="choreographer" value="{{ old('choreographer') }}">
                         {!! $errors->first('choreographer', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>
                     <div class="form-group">

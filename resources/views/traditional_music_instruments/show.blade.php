@@ -13,7 +13,7 @@
                         <tr><td>{{ __('traditional_music_instrument.name') }}</td><td>{{ $traditionalMusicInstrument->name }}</td></tr>
                         <tr><td>{{ __('traditional_music_instrument.type') }}</td><td>{{ $traditionalMusicInstrument->type }}</td></tr>
                         <tr><td>{{ __('traditional_music_instrument.sum_sub_district') }}</td><td>{{ $traditionalMusicInstrument->sum_sub_district }}</td></tr>
-                        <tr><td>{{ __('traditional_music_instrument.description') }}</td><td>{{ $traditionalMusicInstrument->description }}</td></tr>
+                        <tr><td>{{ __('traditional_music_instrument.description') }}</td><td>{{ $traditionalMusicInstrument->description ?? '-' }}</td></tr>
                     </tbody>
                 </table>
             </div>
