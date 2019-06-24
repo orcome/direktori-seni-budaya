@@ -3,21 +3,24 @@
 @section('title', __('traditional_dance.list'))
 
 @section('content')
-<div class="mb-3">
+<div class="d-print-none mb-3">
     <div class="float-right">
         @can('create', new App\TraditionalDance)
             <a href="{{ route('traditional_dances.create') }}" class="btn btn-success">{{ __('traditional_dance.create') }}</a>
-            <a href="{{ route('home') }}" class="btn btn-danger">{{ __('app.print') }}</a>
+            <a href="" class="btn btn-danger" onclick="window.print()">{{ __('app.print') }}</a>
             <a href="{{ route('home') }}" class="btn btn-outline-secondary">{{ __('app.back_to_menu') }}</a>
         @endcan
     </div>
     <h3 class="page-title">{{ __('traditional_dance.list') }} | <small>{{ __('app.total') }} : {{ $traditionalDances->total() }} {{ __('traditional_dance.traditional_dance') }}</small></h3>
 </div>
-
+<div class="d-none d-print-block">
+    <h5 class="text-center"><b>TARI TRADISIONAL</b></h5>
+    <h5 class="text-center"><b>KABUPATEN KAPUAS</b></h5><br>
+</div>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">
+            <div class="d-print-none card-header">
                 <form method="GET" action="" accept-charset="UTF-8" class="form-inline">
                     <div class="form-group">
                         <label for="q" class="form-label">{{ __('traditional_dance.search') }}</label>
@@ -35,18 +38,18 @@
                         <th>{{ __('traditional_dance.dance_type') }}</th>
                         <th>{{ __('traditional_dance.choreographer') }}</th>
                         <th>{{ __('traditional_dance.description') }}</th>
-                        <th class="text-center">{{ __('app.action') }}</th>
+                        <th class="d-print-none text-center">{{ __('app.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($traditionalDances as $key => $traditionalDance)
                     <tr>
                         <td class="text-center">{{ $traditionalDances->firstItem() + $key }}</td>
-                        <td>{!! $traditionalDance->name_link !!}</td>
-                        <td>{!! $traditionalDance->dance_type !!}</td>
-                        <td>{!! $traditionalDance->choreographer !!}</td>
+                        <td>{{ $traditionalDance->name }}</td>
+                        <td>{{ $traditionalDance->dance_type }}</td>
+                        <td>{{ $traditionalDance->choreographer }}</td>
                         <td>{{ $traditionalDance->description }}</td>
-                        <td class="text-center">
+                        <td class="d-print-none text-center">
                             @can('view', $traditionalDance)
                                 <a href="{{ route('traditional_dances.show', $traditionalDance) }}" id="show-traditional_dance-{{ $traditionalDance->id }}">{{ __('app.show') }}</a>
                             @endcan
