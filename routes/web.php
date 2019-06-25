@@ -71,4 +71,13 @@ Route::middleware('auth')->group(function () {
      */
     Route::get('profile/update-password', 'ChangePasswordController@show')->name('profile.change_password.form');
     Route::post('profile/update-password', 'ChangePasswordController@update')->name('profile.change_password.update');
+
+    /*
+     * Backup Restore Database Routes
+     */
+    Route::post('backups/upload', ['as' => 'backups.upload', 'uses' => 'BackupsController@upload']);
+    Route::post('backups/{fileName}/restore', ['as' => 'backups.restore', 'uses' => 'BackupsController@restore']);
+    Route::get('backups/{fileName}/dl', ['as' => 'backups.download', 'uses' => 'BackupsController@download']);
+    Route::resource('backups', 'BackupsController', ['except' => ['create', 'show', 'edit']]);
+
 });
