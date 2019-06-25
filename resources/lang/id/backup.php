@@ -19,9 +19,9 @@ return [
     'delete'              => 'Hapus',
     'delete_title'        => 'Hapus file backup ini',
     'sure_to_delete_file' => 'Anda yakin ingin menghapus file <strong>":filename"</strong>?',
-    'cancel_delete'       => 'Batal Menghapus',
-    'confirm_delete'      => 'YA, Silakan delete file ini!',
-    'delete_confirm'      => 'Tekan OK to Menghapus.',
+    'cancel_delete'       => 'Batal',
+    'confirm_delete'      => 'Delete File Backup',
+    'delete_confirm'      => 'Tekan OK untuk Menghapus.',
     'deleted'             => 'File Backup :filename berhasil didelete!',
 
     // Download backup file
@@ -31,8 +31,8 @@ return [
     'restore'         => 'Restore',
     'restore_title'   => 'Restore database dari file',
     'sure_to_restore' => 'Apkah Anda yakin ingin restore database menggunakan file backup ini "<strong>:filename</strong>"? <br><br>Please make sure your <strong>current database has been backed up</strong>.',
-    'cancel_restore'  => 'Batal Restore',
-    'confirm_restore' => 'Ya, Restore Database!',
+    'cancel_restore'  => 'Batal',
+    'confirm_restore' => 'Restore Database',
     'restore_confirm' => 'Tekan OK untuk Restore.',
     'restored'        => 'Database telah direstore menggunakan file backup :filename',
 
