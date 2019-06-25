@@ -4,11 +4,10 @@ return [
     // Labels
     'change_password'         => 'Ganti Password',
     'change_password_success' => 'Password berhasil di perbarui!',
-    'old_password_not_match'  => 'Konfirmasi kata sandi lama tidak cocok.',
-    'same_password_not_match' => 'Konfirmasi kata sandi baru tidak cocok.',
+    'change_password_error'   => 'Password gagal di perbarui!',
 
     // Actions
-    'back' => 'Batal',
+    'back' => 'Kembali',
 
     // Attributes
     'old_password'              => 'Password Lama',

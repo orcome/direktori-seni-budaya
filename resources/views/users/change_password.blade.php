@@ -25,7 +25,7 @@
 
                                 @if ($errors->has('old_password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('old_password') }}</strong>
+                                        <strong style="color: red">{{ $errors->first('old_password') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -35,11 +35,11 @@
                             <label for="new_password" class="form-label">{{ __('auth.new_password') }}</label>
 
                             <div>
-                                <input id="new_password" type="password" class="form-control" name="new_password" placeholder="******">
+                                <input id="new_password" type="password" class="form-control" name="new_password" placeholder="********">
 
                                 @if ($errors->has('new_password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('new_password') }}</strong>
+                                        <strong style="color: red">{{ $errors->first('new_password') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -48,11 +48,11 @@
                         <div class="form-group{{ $errors->has('new_password_confirmation') ? ' has-error' : '' }}">
                             <label for="new_password-confirm" class="form-label">{{ __('auth.new_password_confirmation') }}</label>
                             <div>
-                                <input id="new_password-confirm" type="password" class="form-control" name="new_password_confirmation" placeholder="******">
+                                <input id="new_password-confirm" type="password" class="form-control" name="new_password_confirmation" placeholder="********">
 
                                 @if ($errors->has('new_password_confirmation'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('new_password_confirmation') }}</strong>
+                                        <strong style="color: red">{{ $errors->first('new_password_confirmation') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -62,7 +62,7 @@
                         <button type="submit" class="btn btn-primary">
                             {{ __('auth.change_password') }}
                         </button>
-                        <a href="{{ url()->previous() }}" class="btn btn-link">
+                        <a href="{{ route('home') }}" class="btn btn-link">
                             {{ __('auth.back') }}
                         </a>
                     </div>
