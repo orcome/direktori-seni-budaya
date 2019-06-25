@@ -65,4 +65,10 @@ Route::middleware('auth')->group(function () {
      * SubDistricts Routes
      */
     Route::resource('sub_districts', 'SubDistrictController');
+
+    /*
+     * ChangePassword Routes
+     */
+    Route::get('profile/update-password', 'ChangePasswordController@show')->name('profile.change_password.form');
+    Route::post('profile/update-password', 'ChangePasswordController@update')->name('profile.change_password.update');
 });

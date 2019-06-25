@@ -77,7 +77,6 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('sub_districts.index') }}">{{ __('sub_district.list') }}</a>
-                                    <a class="dropdown-item" href="#">Ganti Password</a>
                                     <a class="dropdown-item" href="#">Backup Restore Database</a>
                                 </div>
                             </li>
@@ -87,6 +86,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('profile.change_password.form') }}">{{ __('auth.change_password') }}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

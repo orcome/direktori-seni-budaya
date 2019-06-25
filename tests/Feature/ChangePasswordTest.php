@@ -49,10 +49,10 @@ class ChangePasswordTest extends TestCase
             'new_password_confirmation' => 'newpassword',
         ]);
 
-        $this->seeText(__('passwords.old_password'));
+        $this->seeText(__('auth.old_password_not_match'));
 
         $this->assertTrue(
-            app('hash')->check('secret', $user->password),
+            app('hash')->check('password', $user->password),
             'The password shouldn\'t changed!'
         );
     }
