@@ -46,11 +46,11 @@ class BackupsController extends Controller
                 new Destination('local', 'backup/db/'.$fileName),
             ], 'gzip');
 
-            // flash(__('backup.created', ['filename' => $fileName.'.gz']), 'success');
+            flash(__('backup.created', ['filename' => $fileName.'.gz']), 'success');
 
             return redirect()->route('backups.index');
         } catch (FileExistsException $e) {
-            // flash(__('backup.not_created', ['filename' => $fileName.'.gz']), 'error');
+            flash(__('backup.not_created', ['filename' => $fileName.'.gz']), 'error');
 
             return redirect()->route('backups.index');
         }
@@ -62,7 +62,7 @@ class BackupsController extends Controller
             unlink(storage_path('app/backup/db/').$fileName);
         }
 
-        // flash(__('backup.deleted', ['filename' => $fileName]), 'warning');
+        flash(__('backup.deleted', ['filename' => $fileName]), 'warning');
 
         return redirect()->route('backups.index');
     }
@@ -80,7 +80,7 @@ class BackupsController extends Controller
         } catch (FileNotFoundException $e) {
         }
 
-        // flash(__('backup.restored', ['filename' => $fileName]), 'success');
+        flash(__('backup.restored', ['filename' => $fileName]), 'success');
 
         return redirect()->route('backups.index');
     }
@@ -100,7 +100,7 @@ class BackupsController extends Controller
             $file->storeAs('backup/db', $fileName);
         }
 
-        // flash(__('backup.uploaded', ['filename' => $fileName]), 'success');
+        flash(__('backup.uploaded', ['filename' => $fileName]), 'success');
 
         return redirect()->route('backups.index');
     }
