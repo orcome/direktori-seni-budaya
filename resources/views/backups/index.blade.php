@@ -4,8 +4,6 @@
 
 @section('content')
 
-@include('layouts.partials.setting_nav')
-
 <div class="row">
     <div class="col-md-8">
         <div class="card">

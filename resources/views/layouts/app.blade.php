@@ -77,7 +77,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('sub_districts.index') }}">{{ __('sub_district.list') }}</a>
-                                    <a class="dropdown-item" href="#">Backup Restore Database</a>
+                                    <a class="dropdown-item" href="{{ route('backups.index') }}">{{ __('backup.list')}}</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
