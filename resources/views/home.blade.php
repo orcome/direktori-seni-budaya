@@ -4,9 +4,8 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-12" style="text-align: center">
-                    <h1><b>Sistem Informasi Database Seni & Budaya Daerah</b></h1>
-                    <h3>Kabupaten Kapuas | Provinsi Kalimantan Tengah</h3>
+                <div class="col-md-12">
+                    <h1><b>Sistem Informasi Seni & Budaya Daerah</b></h1>
                 </div>
             </div>
             <hr>
