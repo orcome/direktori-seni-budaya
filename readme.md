@@ -1,74 +1,85 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-[![Build Status](https://travis-ci.org/orcome/direktori-seni-budaya.svg?branch=master)](https://travis-ci.org/orcome/direktori-seni-budaya)
+<h1 align="center">Sistem Informasi Seni dan Budaya</h1>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Tentang
+Sistem Informasi Seni dan Budaya adalah aplikasi berbasis web sederhana untuk menyimpan data seni dan budaya daerah.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Fitur
+Fitur yang tersedia di aplikasi ini adalah sebagai berikut
+1. Kelola data Sanggar Seni
+2. Kelola data Alat Musik Tradisional
+3. Kelola data Tari Tradisional
+4. Kelola data Upacara Adat
+5. Kelola data Upacara Ritual
+6. Kelola data Permainan Tradisional
+7. Kelola data Cagar Budaya
+8. Kelola Data Tempat Wisata
+9. Kelola Data Kecamatan
+10. Perbarui user password
+11. Backup dan Restore Database
+12. Print list data
+13. Flash message perubahan data
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Cara Install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Persyaratan
+Aplikasi ini dapat diinstal pada local dan online server dengan spesifikasi
+1. PHP 7.2 (Laravel 5.8)
+2. Database MySQL atau MariaDB
+3. Database SQLite (untuk automated testing)
 
-## Learning Laravel
+### Langkah Instalasi
+Langkah untuk menginstal aplikasi
+1. Clone repo dengan perintah : `git clone https://github.com/orcome/direktori-seni-budaya.git`
+2. `cd direktori-seni-budaya`
+3. `composer install`
+4. `cp .env.example .env`
+5. `php artisan key:generate`
+6. Buat database baru di MySQL
+7. Set database yang digunakan pada file `.env`
+8. `php artisan migrate`
+9. `php artisan serve`
+10. Selesai (register user baru untuk menggunakan aplikasi)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Testing
+Aplikasi ini dibangun menggunakan testing (TDD) menggunakan SQLite database
+`vendor/bin/phpunit`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Screenshots
+Berikut adalah beberapa tampilan aplikasi
+#### Dashboard
+![Dashboard](public/images/Dashboard.png "Dashboard")
 
-## Laravel Sponsors
+#### List
+![List](public/images/List.png "List")
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### Input
+![Input](public/images/Input.png "Input")
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+#### Edit
+![Edit](public/images/Edit.png "Edit")
 
-## Contributing
+#### Delete
+![Delete](public/images/Delete.png "Delete")
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Layout Print
+![Layout Print](public/images/Layout-Print.png "Layout Print")
 
-## Security Vulnerabilities
+#### Change Password
+![Change Password](public/images/Change-Password.png "Change Password")
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### Backup and Restore Database
+![Backup and Restore Database](public/images/Backup-and-Restore-Database.png "Backup and Restore Database")
+
+#### Testing
+![Testing](public/images/Testing.png "Testing")
 
 ## License
+Sistem Informasi Seni dan Budaya adalah software open-source dengan license [MIT license](LICENSE).
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
