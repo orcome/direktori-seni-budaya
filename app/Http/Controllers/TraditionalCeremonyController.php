@@ -52,6 +52,8 @@ class TraditionalCeremonyController extends Controller
 
         $traditionalCeremony = TraditionalCeremony::create($newTraditionalCeremony);
 
+        flash(__('traditional_ceremony.created'), 'success');
+
         return redirect()->route('traditional_ceremonies.show', $traditionalCeremony);
     }
 
@@ -97,6 +99,8 @@ class TraditionalCeremonyController extends Controller
         ]);
         $traditionalCeremony->update($traditionalCeremonyData);
 
+        flash(__('traditional_ceremony.updated'), 'information');
+
         return redirect()->route('traditional_ceremonies.show', $traditionalCeremony);
     }
 
@@ -114,6 +118,7 @@ class TraditionalCeremonyController extends Controller
         $request->validate(['traditional_ceremony_id' => 'required']);
 
         if ($request->get('traditional_ceremony_id') == $traditionalCeremony->id && $traditionalCeremony->delete()) {
+            flash(__('traditional_ceremony.deleted'), 'error');
             return redirect()->route('traditional_ceremonies.index');
         }
 

@@ -57,6 +57,8 @@ class CulturalHeritageController extends Controller
 
         $culturalHeritage = CulturalHeritage::create($newCulturalHeritage);
 
+        flash(__('cultural_heritage.created'), 'success');
+
         return redirect()->route('cultural_heritages.show', $culturalHeritage);
     }
 
@@ -106,6 +108,8 @@ class CulturalHeritageController extends Controller
         ]);
         $culturalHeritage->update($culturalHeritageData);
 
+        flash(__('cultural_heritage.updated'), 'information');
+
         return redirect()->route('cultural_heritages.show', $culturalHeritage);
     }
 
@@ -123,6 +127,7 @@ class CulturalHeritageController extends Controller
         $request->validate(['cultural_heritage_id' => 'required']);
 
         if ($request->get('cultural_heritage_id') == $culturalHeritage->id && $culturalHeritage->delete()) {
+            flash(__('cultural_heritage.deleted'), 'error');
             return redirect()->route('cultural_heritages.index');
         }
 

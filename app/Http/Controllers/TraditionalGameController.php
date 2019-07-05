@@ -53,6 +53,8 @@ class TraditionalGameController extends Controller
 
         $traditionalGame = TraditionalGame::create($newTraditionalGame);
 
+        flash(__('traditional_game.created'), 'success');
+
         return redirect()->route('traditional_games.show', $traditionalGame);
     }
 
@@ -99,6 +101,8 @@ class TraditionalGameController extends Controller
         ]);
         $traditionalGame->update($traditionalGameData);
 
+        flash(__('traditional_game.updated'), 'information');
+
         return redirect()->route('traditional_games.show', $traditionalGame);
     }
 
@@ -116,6 +120,7 @@ class TraditionalGameController extends Controller
         $request->validate(['traditional_game_id' => 'required']);
 
         if ($request->get('traditional_game_id') == $traditionalGame->id && $traditionalGame->delete()) {
+            flash(__('traditional_game.deleted'), 'error');
             return redirect()->route('traditional_games.index');
         }
 

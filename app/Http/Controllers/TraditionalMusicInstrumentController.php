@@ -53,6 +53,8 @@ class TraditionalMusicInstrumentController extends Controller
 
         $traditionalMusicInstrument = TraditionalMusicInstrument::create($newTraditionalMusicInstrument);
 
+        flash(__('traditional_music_instrument.created'), 'success');
+
         return redirect()->route('traditional_music_instruments.show', $traditionalMusicInstrument);
     }
 
@@ -99,6 +101,8 @@ class TraditionalMusicInstrumentController extends Controller
         ]);
         $traditionalMusicInstrument->update($traditionalMusicInstrumentData);
 
+        flash(__('traditional_music_instrument.updated'), 'information');
+
         return redirect()->route('traditional_music_instruments.show', $traditionalMusicInstrument);
     }
 
@@ -116,6 +120,7 @@ class TraditionalMusicInstrumentController extends Controller
         $request->validate(['traditional_music_instrument_id' => 'required']);
 
         if ($request->get('traditional_music_instrument_id') == $traditionalMusicInstrument->id && $traditionalMusicInstrument->delete()) {
+            flash(__('traditional_music_instrument.deleted'), 'error');
             return redirect()->route('traditional_music_instruments.index');
         }
 

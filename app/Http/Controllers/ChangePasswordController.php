@@ -21,6 +21,8 @@ class ChangePasswordController extends Controller
             $updateResponse = array('error' => __('auth.change_password_error'));
         }
 
+        flash(__('app.password_changed'), 'success');
+
         return redirect()->back()->with($updateResponse);
     }
 }

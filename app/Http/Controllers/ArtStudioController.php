@@ -59,6 +59,8 @@ class ArtStudioController extends Controller
 
         $artStudio = ArtStudio::create($newArtStudio);
 
+        flash(__('art_studio.created'), 'success');
+
         return redirect()->route('art_studios.show', $artStudio);
     }
 
@@ -110,6 +112,8 @@ class ArtStudioController extends Controller
         ]);
         $artStudio->update($artStudioData);
 
+        flash(__('art_studio.updated'), 'information');
+
         return redirect()->route('art_studios.show', $artStudio);
     }
 
@@ -127,6 +131,7 @@ class ArtStudioController extends Controller
         $request->validate(['art_studio_id' => 'required']);
 
         if ($request->get('art_studio_id') == $artStudio->id && $artStudio->delete()) {
+            flash(__('art_studio.deleted'), 'error');
             return redirect()->route('art_studios.index');
         }
 

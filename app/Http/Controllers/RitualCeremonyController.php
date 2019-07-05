@@ -52,6 +52,8 @@ class RitualCeremonyController extends Controller
 
         $ritualCeremony = RitualCeremony::create($newRitualCeremony);
 
+        flash(__('ritual_ceremony.created'), 'success');
+
         return redirect()->route('ritual_ceremonies.show', $ritualCeremony);
     }
 
@@ -97,6 +99,8 @@ class RitualCeremonyController extends Controller
         ]);
         $ritualCeremony->update($ritualCeremonyData);
 
+        flash(__('ritual_ceremony.updated'), 'information');
+
         return redirect()->route('ritual_ceremonies.show', $ritualCeremony);
     }
 
@@ -114,6 +118,7 @@ class RitualCeremonyController extends Controller
         $request->validate(['ritual_ceremony_id' => 'required']);
 
         if ($request->get('ritual_ceremony_id') == $ritualCeremony->id && $ritualCeremony->delete()) {
+            flash(__('ritual_ceremony.deleted'), 'error');
             return redirect()->route('ritual_ceremonies.index');
         }
 

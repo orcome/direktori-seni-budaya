@@ -53,6 +53,8 @@ class NaturalArtificialTourismController extends Controller
 
         $naturalArtificialTourism = NaturalArtificialTourism::create($newNaturalArtificialTourism);
 
+        flash(__('natural_artificial_tourism.created'), 'success');
+
         return redirect()->route('natural_artificial_tourisms.show', $naturalArtificialTourism);
     }
 
@@ -99,6 +101,8 @@ class NaturalArtificialTourismController extends Controller
         ]);
         $naturalArtificialTourism->update($naturalArtificialTourismData);
 
+        flash(__('natural_artificial_tourism.updated'), 'information');
+
         return redirect()->route('natural_artificial_tourisms.show', $naturalArtificialTourism);
     }
 
@@ -116,6 +120,7 @@ class NaturalArtificialTourismController extends Controller
         $request->validate(['natural_artificial_tourism_id' => 'required']);
 
         if ($request->get('natural_artificial_tourism_id') == $naturalArtificialTourism->id && $naturalArtificialTourism->delete()) {
+            flash(__('natural_artificial_tourism.deleted'), 'error');
             return redirect()->route('natural_artificial_tourisms.index');
         }
 

@@ -56,7 +56,7 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="backup_file" class="control-label">{{ __('backup.upload') }}</label>
-                <input type="file" name="backup_file" class="form-control">
+                <input type="file" name="backup_file" class="form-control" style="height: 42px">
                 {!! $errors->first('backup_file', '<div class="text-danger text-right">:message</div>') !!}
             </div>
             <div class="form-group">

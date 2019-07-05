@@ -9,17 +9,11 @@
             <div class="card">
                 <div class="card-header">{{ __('auth.change_password') }}</div>
 
-                @if (session('success') or session('error'))
-                    <div class="alert alert-{{ session('success') ? 'success' : 'danger' }}">
-                        {{ session('success') ?: session('error')}}
-                    </div>
-                @endif
                 <form class="form-horizontal" role="form" method="POST" action="{{ route('profile.change_password.update') }}">
                     {{ csrf_field() }}
                     <div class="card-body">
                         <div class="form-group{{ $errors->has('old_password') ? ' has-error' : '' }}">
                             <label for="old_password" class="form-label">{{ __('auth.old_password') }}</label>
-
                             <div>
                                 <input id="old_password" type="password" class="form-control" name="old_password" placeholder="******">
 

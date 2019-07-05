@@ -53,6 +53,8 @@ class TraditionalDanceController extends Controller
 
         $traditionalDance = TraditionalDance::create($newTraditionalDance);
 
+        flash(__('traditional_dance.created'), 'success');
+
         return redirect()->route('traditional_dances.show', $traditionalDance);
     }
 
@@ -99,6 +101,8 @@ class TraditionalDanceController extends Controller
         ]);
         $traditionalDance->update($traditionalDanceData);
 
+        flash(__('traditional_dance.updated'), 'information');
+
         return redirect()->route('traditional_dances.show', $traditionalDance);
     }
 
@@ -116,6 +120,7 @@ class TraditionalDanceController extends Controller
         $request->validate(['traditional_dance_id' => 'required']);
 
         if ($request->get('traditional_dance_id') == $traditionalDance->id && $traditionalDance->delete()) {
+            flash(__('traditional_dance.deleted'), 'error');
             return redirect()->route('traditional_dances.index');
         }
 

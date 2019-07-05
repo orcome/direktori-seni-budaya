@@ -16,6 +16,7 @@ return [
     'list_8'            => 'Tempat Wisata',
     'menu_list'         => 'Daftar Menu',
     'setting'           => 'Pengaturan',
+    'password_changed'  => 'Password berhasil diperbarui.',
 
     // Actions
     'show'                  => 'Lihat Detail',
