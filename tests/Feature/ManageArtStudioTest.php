@@ -54,6 +54,8 @@ class ManageArtStudioTest extends TestCase
 
         $this->seeRouteIs('art_studios.show', ArtStudio::first());
 
+        $this->seeText(__('art_studio.created'));
+
         $this->seeInDatabase('art_studios', $this->getCreateFields());
     }
 
@@ -109,6 +111,8 @@ class ManageArtStudioTest extends TestCase
 
         $this->seeRouteIs('art_studios.show', $artStudio);
 
+        $this->seeText(__('art_studio.updated'));
+
         $this->seeInDatabase('art_studios', $this->getEditFields([
             'id' => $artStudio->id,
         ]));
@@ -162,6 +166,8 @@ class ManageArtStudioTest extends TestCase
         $this->seeRouteIs('art_studios.edit', [$artStudio, 'action' => 'delete']);
 
         $this->press(__('app.delete_confirm_button'));
+
+        $this->seeText(__('art_studio.deleted'));
 
         $this->dontSeeInDatabase('art_studios', [
             'id' => $artStudio->id,

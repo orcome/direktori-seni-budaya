@@ -43,6 +43,8 @@ class ManageTraditionalGameTest extends TestCase
 
         $this->seeRouteIs('traditional_games.show', TraditionalGame::first());
 
+        $this->seeText(__('traditional_game.created'));
+
         $this->seeInDatabase('traditional_games', $this->getCreateFields());
     }
 
@@ -104,6 +106,8 @@ class ManageTraditionalGameTest extends TestCase
 
         $this->seeRouteIs('traditional_games.show', $traditionalGame);
 
+        $this->seeText(__('traditional_game.updated'));
+
         $this->seeInDatabase('traditional_games', $this->getEditFields([
             'id' => $traditionalGame->id,
         ]));
@@ -158,6 +162,8 @@ class ManageTraditionalGameTest extends TestCase
         $this->seeRouteIs('traditional_games.edit', [$traditionalGame, 'action' => 'delete']);
 
         $this->press(__('app.delete_confirm_button'));
+
+        $this->seeText(__('traditional_game.deleted'));
 
         $this->dontSeeInDatabase('traditional_games', [
             'id' => $traditionalGame->id,

@@ -43,6 +43,8 @@ class ManageNaturalArtificialTourismTest extends TestCase
 
         $this->seeRouteIs('natural_artificial_tourisms.show', NaturalArtificialTourism::first());
 
+        $this->seeText(__('natural_artificial_tourism.created'));
+
         $this->seeInDatabase('natural_artificial_tourisms', $this->getCreateFields());
     }
 
@@ -104,6 +106,8 @@ class ManageNaturalArtificialTourismTest extends TestCase
 
         $this->seeRouteIs('natural_artificial_tourisms.show', $naturalArtificialTourism);
 
+        $this->seeText(__('natural_artificial_tourism.updated'));
+
         $this->seeInDatabase('natural_artificial_tourisms', $this->getEditFields([
             'id' => $naturalArtificialTourism->id,
         ]));
@@ -158,6 +162,8 @@ class ManageNaturalArtificialTourismTest extends TestCase
         $this->seeRouteIs('natural_artificial_tourisms.edit', [$naturalArtificialTourism, 'action' => 'delete']);
 
         $this->press(__('app.delete_confirm_button'));
+
+        $this->seeText(__('natural_artificial_tourism.deleted'));
 
         $this->dontSeeInDatabase('natural_artificial_tourisms', [
             'id' => $naturalArtificialTourism->id,

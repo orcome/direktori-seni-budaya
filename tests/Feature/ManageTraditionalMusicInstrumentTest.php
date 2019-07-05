@@ -43,6 +43,8 @@ class ManageTraditionalMusicInstrumentTest extends TestCase
 
         $this->seeRouteIs('traditional_music_instruments.show', TraditionalMusicInstrument::first());
 
+        $this->seeText(__('traditional_music_instrument.created'));
+
         $this->seeInDatabase('traditional_music_instruments', $this->getCreateFields());
     }
 
@@ -104,6 +106,8 @@ class ManageTraditionalMusicInstrumentTest extends TestCase
 
         $this->seeRouteIs('traditional_music_instruments.show', $traditionalMusicInstrument);
 
+        $this->seeText(__('traditional_music_instrument.updated'));
+
         $this->seeInDatabase('traditional_music_instruments', $this->getEditFields([
             'id' => $traditionalMusicInstrument->id,
         ]));
@@ -158,6 +162,8 @@ class ManageTraditionalMusicInstrumentTest extends TestCase
         $this->seeRouteIs('traditional_music_instruments.edit', [$traditionalMusicInstrument, 'action' => 'delete']);
 
         $this->press(__('app.delete_confirm_button'));
+
+        $this->seeText(__('traditional_music_instrument.deleted'));
 
         $this->dontSeeInDatabase('traditional_music_instruments', [
             'id' => $traditionalMusicInstrument->id,

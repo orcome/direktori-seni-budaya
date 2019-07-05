@@ -43,6 +43,8 @@ class ManageTraditionalDanceTest extends TestCase
 
         $this->seeRouteIs('traditional_dances.show', TraditionalDance::first());
 
+        $this->seeText(__('traditional_dance.created'));
+
         $this->seeInDatabase('traditional_dances', $this->getCreateFields());
     }
 
@@ -104,6 +106,8 @@ class ManageTraditionalDanceTest extends TestCase
 
         $this->seeRouteIs('traditional_dances.show', $traditionalDance);
 
+        $this->seeText(__('traditional_dance.updated'));
+
         $this->seeInDatabase('traditional_dances', $this->getEditFields([
             'id' => $traditionalDance->id,
         ]));
@@ -158,6 +162,8 @@ class ManageTraditionalDanceTest extends TestCase
         $this->seeRouteIs('traditional_dances.edit', [$traditionalDance, 'action' => 'delete']);
 
         $this->press(__('app.delete_confirm_button'));
+
+        $this->seeText(__('traditional_dance.deleted'));
 
         $this->dontSeeInDatabase('traditional_dances', [
             'id' => $traditionalDance->id,

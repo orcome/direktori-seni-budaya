@@ -25,7 +25,7 @@ class ChangePasswordTest extends TestCase
             'new_password_confirmation' => 'inipasswordbaru',
         ]);
 
-        $this->seeText(__('auth.change_password_success'));
+        $this->seeText(__('app.password_changed'));
 
         $this->assertTrue(
             app('hash')->check('inipasswordbaru', $user->password),

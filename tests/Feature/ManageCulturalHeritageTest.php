@@ -51,6 +51,8 @@ class ManageCulturalHeritageTest extends TestCase
 
         $this->seeRouteIs('cultural_heritages.show', CulturalHeritage::first());
 
+        $this->seeText(__('cultural_heritage.created'));
+
         $this->seeInDatabase('cultural_heritages', $this->getCreateFields());
     }
 
@@ -115,6 +117,8 @@ class ManageCulturalHeritageTest extends TestCase
         ]));
 
         $this->seeRouteIs('cultural_heritages.show', $culturalHeritage);
+
+        $this->seeText(__('cultural_heritage.updated'));
 
         $this->seeInDatabase('cultural_heritages', $this->getEditFields([
             'id' => $culturalHeritage->id,
@@ -185,6 +189,8 @@ class ManageCulturalHeritageTest extends TestCase
         $this->seeRouteIs('cultural_heritages.edit', [$culturalHeritage, 'action' => 'delete']);
 
         $this->press(__('app.delete_confirm_button'));
+
+        $this->seeText(__('cultural_heritage.deleted'));
 
         $this->dontSeeInDatabase('cultural_heritages', [
             'id' => $culturalHeritage->id,

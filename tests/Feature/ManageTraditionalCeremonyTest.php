@@ -42,6 +42,8 @@ class ManageTraditionalCeremonyTest extends TestCase
 
         $this->seeRouteIs('traditional_ceremonies.show', TraditionalCeremony::first());
 
+        $this->seeText(__('traditional_ceremony.created'));
+
         $this->seeInDatabase('traditional_ceremonies', $this->getCreateFields());
     }
 
@@ -102,6 +104,8 @@ class ManageTraditionalCeremonyTest extends TestCase
 
         $this->seeRouteIs('traditional_ceremonies.show', $traditionalCeremony);
 
+        $this->seeText(__('traditional_ceremony.updated'));
+
         $this->seeInDatabase('traditional_ceremonies', $this->getEditFields([
             'id' => $traditionalCeremony->id,
         ]));
@@ -156,6 +160,8 @@ class ManageTraditionalCeremonyTest extends TestCase
         $this->seeRouteIs('traditional_ceremonies.edit', [$traditionalCeremony, 'action' => 'delete']);
 
         $this->press(__('app.delete_confirm_button'));
+
+        $this->seeText(__('traditional_ceremony.deleted'));
 
         $this->dontSeeInDatabase('traditional_ceremonies', [
             'id' => $traditionalCeremony->id,
